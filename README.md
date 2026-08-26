@@ -11,10 +11,8 @@ npm run typecheck
 npm run lint:fsd   # Steiger, the official FSD linter
 ```
 
-## Layer map
+## Organization
 
-The source was one 986-line file mixing a template DSL, inline styles and a
-data blob. It is now split by **layer**, then by **slice**, then by **segment**:
 
 ```
 src/
