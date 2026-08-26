@@ -1,0 +1,11 @@
+.feedLayout {
+  display: grid;
+  grid-template-columns: 68% 32%;
+  gap: 48px;
+}
+
+@media (max-width: 1023px) {
+  .feedLayout {
+    grid-template-columns: 1fr;
+  }
+}

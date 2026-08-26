@@ -1,0 +1,45 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--nl-navy);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wordmark {
+  font-family: var(--nl-font-display);
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--nl-ink-inverse);
+}
+
+.close {
+  color: var(--nl-ink-inverse);
+  font-family: var(--nl-font-mono);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+
+.nav {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.link {
+  font-family: var(--nl-font-display);
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--nl-ink-inverse);
+  animation: nlFadeUp 240ms ease-out both;
+}

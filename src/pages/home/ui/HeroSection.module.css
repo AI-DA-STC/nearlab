@@ -1,0 +1,81 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 640px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--nl-bg-deep);
+  overflow: hidden;
+}
+
+/* Stand-in for the looping lab footage; swap for a <video> when supplied. */
+.media {
+  position: absolute;
+  inset: 0;
+  background: var(--nl-bg-deep-raised);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.mediaNote {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--nl-ink-inverse-muted);
+  text-align: right;
+  line-height: 1.6;
+}
+
+.scrimBottom,
+.scrimLeft {
+  position: absolute;
+  inset: 0;
+}
+
+.scrimBottom {
+  background: linear-gradient(to top, rgba(14, 36, 56, 0.85) 0%, rgba(14, 36, 56, 0) 60%);
+}
+
+.scrimLeft {
+  background: linear-gradient(
+    to right,
+    rgba(14, 36, 56, 0.78) 0%,
+    rgba(14, 36, 56, 0.42) 58%,
+    rgba(14, 36, 56, 0.12) 100%
+  );
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  padding-top: 112px;
+  padding-bottom: 72px;
+}
+
+.title {
+  font-family: var(--nl-font-display);
+  font-weight: 700;
+  font-size: clamp(2.75rem, 5.6vw, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  color: var(--nl-ink-inverse);
+  max-width: 26ch;
+  font-stretch: 112%;
+}
+
+.lede {
+  margin-top: 28px;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--nl-ink-inverse-soft);
+  max-width: 62ch;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 460px;
+  }
+}

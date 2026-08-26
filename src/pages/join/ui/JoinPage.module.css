@@ -1,0 +1,34 @@
+.routes {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ethos {
+  background: var(--nl-bg-tint);
+  border-top: 1px solid var(--nl-border);
+  border-bottom: 1px solid var(--nl-border);
+  padding: 96px 0;
+}
+
+.ethosColumns {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.ethosText {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--nl-ink-body);
+  max-width: 62ch;
+}
+
+@media (max-width: 767px) {
+  .routes,
+  .ethosColumns {
+    grid-template-columns: 1fr;
+  }
+}

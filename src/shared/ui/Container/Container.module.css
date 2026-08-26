@@ -1,0 +1,13 @@
+.shell {
+  max-width: var(--nl-shell-max);
+  margin: 0 auto;
+  padding-left: var(--nl-shell-pad);
+  padding-right: var(--nl-shell-pad);
+}
+
+@media (max-width: 767px) {
+  .shell {
+    padding-left: var(--nl-shell-pad-sm);
+    padding-right: var(--nl-shell-pad-sm);
+  }
+}

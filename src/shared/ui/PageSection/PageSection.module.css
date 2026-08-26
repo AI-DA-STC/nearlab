@@ -1,0 +1,37 @@
+.section {
+  padding-top: 96px;
+  padding-bottom: 112px;
+}
+
+.tight {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.flush {
+  padding-bottom: 0;
+}
+
+@media (max-width: 1023px) {
+  .section,
+  .tight {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .flush {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .section,
+  .tight {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .flush {
+    padding-bottom: 0;
+  }
+}

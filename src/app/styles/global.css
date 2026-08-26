@@ -1,0 +1,34 @@
+@import './tokens.css';
+@import './reset.css';
+
+/* Shared keyframes. Component modules reference these by name; keeping them
+   global avoids CSS-module name mangling breaking the animation binding. */
+@keyframes nlFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes nlTicker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

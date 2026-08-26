@@ -1,0 +1,1 @@
+export { RuledHeading } from './RuledHeading';

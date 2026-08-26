@@ -1,0 +1,74 @@
+.viewport {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  transition: transform var(--nl-dur-slow) var(--nl-ease-out);
+  will-change: transform;
+}
+
+.slide {
+  width: 100%;
+  flex: none;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  gap: 48px;
+  align-items: center;
+}
+
+.title {
+  margin-top: 14px;
+  font-family: var(--nl-font-display);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--nl-ink-heading);
+}
+
+.authors {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--nl-ink-muted);
+}
+
+.summary {
+  margin-top: 16px;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--nl-ink-body);
+  max-width: 62ch;
+}
+
+.resources {
+  margin-top: 18px;
+}
+
+.tabs {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab {
+  width: 64px;
+  height: 2px;
+  background: var(--nl-border);
+  transition: background var(--nl-dur-fast) ease-out;
+}
+
+.tabActive {
+  background: var(--nl-navy);
+}
+
+@media (max-width: 1023px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}

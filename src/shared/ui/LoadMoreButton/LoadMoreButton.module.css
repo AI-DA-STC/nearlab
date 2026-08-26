@@ -1,0 +1,20 @@
+.button {
+  width: 100%;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--nl-border);
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--nl-link);
+  text-align: left;
+  transition: background var(--nl-dur-fast) ease-out;
+}
+
+.button:hover {
+  background: var(--nl-bg-tint);
+}
+
+.ruled {
+  margin-top: 40px;
+  border-top: 1px solid var(--nl-border);
+}

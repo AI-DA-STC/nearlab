@@ -1,0 +1,35 @@
+.viewport {
+  margin-top: 72px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  gap: 16px;
+  animation: nlTicker 32s linear infinite;
+}
+
+.viewport:hover .track {
+  animation-play-state: paused;
+}
+
+.item {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88px;
+  padding: 0 28px;
+}
+
+.logo {
+  max-height: 80px;
+  max-width: 260px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}

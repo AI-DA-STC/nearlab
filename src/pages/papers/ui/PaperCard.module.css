@@ -1,0 +1,63 @@
+.card {
+  border: 1px solid var(--nl-border);
+  border-radius: var(--nl-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--nl-bg);
+  animation: nlFadeUp var(--nl-dur-slow) var(--nl-ease-out) both;
+  transition:
+    border-color var(--nl-dur-fast) ease-out,
+    box-shadow var(--nl-dur-fast) ease-out,
+    transform var(--nl-dur-fast) ease-out;
+}
+
+.card:hover {
+  border-color: var(--nl-border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(26, 62, 98, 0.1);
+}
+
+.card:hover :global(.nl-zoom-target) {
+  transform: scale(1.03);
+}
+
+.body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.title {
+  font-family: var(--nl-font-display);
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--nl-ink-heading);
+}
+
+.title:hover {
+  color: var(--nl-navy);
+}
+
+.authors {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--nl-ink-muted);
+}
+
+.published {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--nl-ink-faint);
+}
+
+.resources {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--nl-border);
+}

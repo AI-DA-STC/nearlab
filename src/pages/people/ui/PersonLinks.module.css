@@ -1,0 +1,27 @@
+.row {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--nl-border);
+  border-radius: var(--nl-radius);
+  color: var(--nl-ink-faint);
+  opacity: 0.62;
+  transition:
+    background 160ms ease-out,
+    border-color 160ms ease-out,
+    opacity 160ms ease-out;
+}
+
+.link:hover {
+  background: var(--nl-bg-tint);
+  border-color: var(--nl-border-strong);
+  opacity: 1;
+}

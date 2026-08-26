@@ -1,0 +1,45 @@
+/* Design tokens extracted from the source design canvas.
+   Every colour/type value used by the site resolves through one of these. */
+:root {
+  /* Surfaces */
+  --nl-bg: #fefefe;
+  --nl-bg-tint: #f2f6fa;
+  --nl-bg-deep: #0e2438;
+  --nl-bg-deep-raised: #143049;
+  --nl-border: #e4e4e0;
+  --nl-border-strong: #8fadc8;
+
+  /* Ink */
+  --nl-ink-heading: #12212f;
+  --nl-ink-body: #3d3e3c;
+  --nl-ink-muted: #575755;
+  --nl-ink-faint: #7e7f7b;
+  --nl-ink-faintest: #9a9b97;
+  --nl-ink-inverse: #fefefe;
+  --nl-ink-inverse-muted: #8fadc8;
+  --nl-ink-inverse-soft: #dce6ef;
+
+  /* Brand */
+  --nl-navy: #1a3e62;
+  --nl-navy-deep: #12212f;
+  --nl-link: #24527d;
+  --nl-link-hover: #1a3e62;
+  --nl-accent-soft: #dce6ef;
+
+  /* Type */
+  --nl-font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --nl-font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --nl-font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Layout */
+  --nl-shell-max: 1200px;
+  --nl-shell-pad: 32px;
+  --nl-shell-pad-sm: 20px;
+  --nl-header-height: 72px;
+  --nl-radius: 3px;
+
+  /* Motion */
+  --nl-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --nl-dur-fast: 180ms;
+  --nl-dur-slow: 420ms;
+}

@@ -1,0 +1,29 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.separator {
+  font-family: var(--nl-font-mono);
+  font-size: 11px;
+  color: var(--nl-ink-faintest);
+}
+
+.link {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--nl-link);
+}
+
+.link:hover {
+  text-decoration: underline;
+}

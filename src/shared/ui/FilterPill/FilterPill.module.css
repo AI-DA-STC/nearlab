@@ -1,0 +1,43 @@
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-family: var(--nl-font-body);
+  font-weight: 500;
+  font-size: 13px;
+  transition: all var(--nl-dur-fast) ease-out;
+}
+
+.inactive {
+  background: var(--nl-bg);
+  border: 1px solid var(--nl-border);
+  color: var(--nl-ink-body);
+}
+
+.inactive:hover {
+  border-color: var(--nl-border-strong);
+  background: var(--nl-bg-tint);
+}
+
+.active {
+  background: var(--nl-navy);
+  color: var(--nl-ink-inverse);
+}
+
+.count {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--nl-ink-faint);
+}
+
+.active .count {
+  color: inherit;
+  opacity: 0.75;
+}
+
+.tick {
+  flex: none;
+}

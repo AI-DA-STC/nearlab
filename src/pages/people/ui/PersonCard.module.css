@@ -1,0 +1,93 @@
+.card {
+  color: var(--nl-ink-heading);
+}
+
+.portrait {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--nl-bg-tint);
+  border: 1px solid var(--nl-border);
+  border-radius: var(--nl-radius);
+  overflow: hidden;
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* "Works on" panel, revealed on hover; the topic line below stands in for it
+   on touch viewports where hover never fires. */
+.topics {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 62, 98, 0.94);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity var(--nl-dur-fast) ease-out;
+}
+
+.card:hover .topics,
+.card:focus-within .topics {
+  opacity: 1;
+}
+
+.topicsLabel {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--nl-ink-inverse-muted);
+}
+
+.topic {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--nl-ink-inverse);
+}
+
+.details {
+  padding-top: 12px;
+}
+
+.name {
+  font-family: var(--nl-font-body);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.3;
+  color: inherit;
+}
+
+.role {
+  margin-top: 3px;
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--nl-ink-faint);
+}
+
+.topicLine {
+  display: none;
+  margin-top: 4px;
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--nl-ink-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .topics {
+    display: none;
+  }
+
+  .topicLine {
+    display: block;
+  }
+}

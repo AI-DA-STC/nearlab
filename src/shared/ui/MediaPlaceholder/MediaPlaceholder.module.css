@@ -1,0 +1,43 @@
+.frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.media {
+  aspect-ratio: 16 / 9;
+  background: var(--nl-bg-tint);
+  border: 1px solid var(--nl-border);
+  border-radius: var(--nl-radius);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.compact {
+  padding: 12px;
+  border: 0;
+  border-bottom: 1px solid var(--nl-border);
+  border-radius: 0;
+}
+
+.caption {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--nl-ink-muted);
+}
+
+.compact .caption {
+  font-size: 11px;
+}
+
+.overlaySlot {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* Slow zoom when the enclosing card is hovered. */
+.zoom {
+  transition: transform 0.4s ease-out;
+}

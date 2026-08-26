@@ -1,0 +1,8 @@
+.heading {
+  font-family: var(--nl-font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--nl-ink-heading);
+}

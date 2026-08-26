@@ -1,0 +1,46 @@
+.bar {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.groupLabel {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--nl-ink-muted);
+}
+
+.pills {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 4px;
+}
+
+.resultLine {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--nl-ink-muted);
+}
+
+.clear {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--nl-link);
+}
+
+.clear:hover {
+  text-decoration: underline;
+}
