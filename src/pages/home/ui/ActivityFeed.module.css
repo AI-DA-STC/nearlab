@@ -16,7 +16,6 @@
   gap: 16px;
   padding: 22px 12px 22px 0;
   border-bottom: 1px solid var(--nl-border);
-  animation: nlFadeUp var(--nl-dur-slow) var(--nl-ease-out) both;
   transition: background var(--nl-dur-fast) ease-out;
 }
 
@@ -110,6 +109,17 @@
   background: var(--nl-bg-tint);
   border: 1px solid var(--nl-border);
   border-radius: var(--nl-radius);
+  object-fit: cover;
+}
+
+.empty {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--nl-border);
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--nl-ink-muted);
 }
 
 @media (max-width: 767px) {

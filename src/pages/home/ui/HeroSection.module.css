@@ -8,25 +8,16 @@
   overflow: hidden;
 }
 
-/* Stand-in for the looping lab footage; swap for a <video> when supplied. */
+/* Looping lab footage behind the headline. The deep background shows through
+   while the first frame is still decoding. */
 .media {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   background: var(--nl-bg-deep-raised);
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 24px;
-}
-
-.mediaNote {
-  font-family: var(--nl-font-mono);
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--nl-ink-inverse-muted);
-  text-align: right;
-  line-height: 1.6;
+  pointer-events: none;
 }
 
 .scrimBottom,

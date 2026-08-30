@@ -42,4 +42,5 @@
   --nl-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --nl-dur-fast: 180ms;
   --nl-dur-slow: 420ms;
+  --nl-dur-reveal: 620ms;
 }

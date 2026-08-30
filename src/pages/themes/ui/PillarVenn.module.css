@@ -1,0 +1,143 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Locked to the viewBox aspect so the element box and the coordinate space
+   agree exactly — the pointer maths in PillarVenn depends on it. */
+.svg {
+  display: block;
+  width: 100%;
+  /* Capped so the diagram does not tower over the panel beside it. */
+  max-width: 560px;
+  margin: 0 auto;
+  aspect-ratio: 520 / 480;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.region {
+  fill: var(--nl-navy);
+  fill-opacity: 0;
+  transition: fill-opacity var(--nl-dur-fast) ease-out;
+}
+
+.regionHover {
+  fill-opacity: 0.09;
+}
+
+.regionSelected {
+  fill-opacity: 0.2;
+}
+
+.ring {
+  fill: none;
+  stroke: var(--nl-border-strong);
+  stroke-width: 1.25;
+  opacity: 0.55;
+  transition:
+    opacity var(--nl-dur-fast) ease-out,
+    stroke var(--nl-dur-fast) ease-out,
+    stroke-width var(--nl-dur-fast) ease-out;
+}
+
+.ringActive {
+  stroke: var(--nl-navy);
+  stroke-width: 2;
+  opacity: 1;
+}
+
+.label {
+  font-family: var(--nl-font-display);
+  fill: var(--nl-ink-faint);
+  transition: fill var(--nl-dur-fast) ease-out;
+}
+
+.labelActive {
+  fill: var(--nl-ink-heading);
+}
+
+.labelIndex {
+  font-family: var(--nl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  fill: var(--nl-ink-faintest);
+}
+
+.labelName {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.centre {
+  font-family: var(--nl-font-display);
+  transition: opacity var(--nl-dur-fast) ease-out;
+}
+
+/* The centre keeps its label whichever region is chosen, but stands down so it
+   does not compete with a highlight elsewhere in the diagram. */
+.centreDim {
+  opacity: 0.45;
+}
+
+.centreName {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  fill: var(--nl-navy);
+}
+
+.centreNote {
+  font-family: var(--nl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  fill: var(--nl-ink-faint);
+}
+
+.legendLabel {
+  margin-top: 20px;
+  font-family: var(--nl-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--nl-ink-faint);
+}
+
+.legend {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.key {
+  margin-top: 16px;
+  font-family: var(--nl-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--nl-ink-faintest);
+}
+
+/* SVG font sizes are in user units, so they shrink with the diagram. On a
+   phone the drawing is roughly two-thirds its desktop width, which puts the
+   labels below a readable size — so scale the type back up against the
+   viewBox, and drop the centre's caption, which no longer has the room. */
+@media (max-width: 767px) {
+  .labelIndex {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+
+  .labelName {
+    font-size: 25px;
+  }
+
+  .centreName {
+    font-size: 18px;
+  }
+
+  .centreNote {
+    display: none;
+  }
+}

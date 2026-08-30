@@ -1,4 +1,4 @@
-import { Container, PageHeading, PageSection, SectionHeading } from '@/shared/ui';
+import { Container, PageSection, Reveal, SectionBanner, SectionHeading } from '@/shared/ui';
 import { COLLABORATION_ROUTES } from '../model/collaboration';
 import { RouteCard } from './RouteCard';
 import { PartnerTicker } from './PartnerTicker';
@@ -8,23 +8,33 @@ import styles from './JoinPage.module.css';
 export function JoinPage() {
   return (
     <>
+      <SectionBanner
+        eyebrow="Collaborate"
+        title="Work with us."
+        lede="Three ways in — university collaborations, startup partnerships, and roles inside the lab."
+        motif="routes"
+      />
+
       <PageSection flush>
-        <PageHeading>Work with us.</PageHeading>
-        <ul className={styles.routes}>
+        <Reveal as="ul" className={styles.routes}>
           {COLLABORATION_ROUTES.map((route) => (
             <RouteCard key={route.eyebrow} route={route} />
           ))}
-        </ul>
-        <PartnerTicker />
+        </Reveal>
+        <Reveal delay={140}>
+          <PartnerTicker />
+        </Reveal>
       </PageSection>
 
       <PageSection>
-        <OpenPositions />
+        <Reveal>
+          <OpenPositions />
+        </Reveal>
       </PageSection>
 
       <section className={styles.ethos}>
         <Container>
-          <SectionHeading>What we look for</SectionHeading>
+          <SectionHeading id="what-we-look-for">What we look for</SectionHeading>
           <div className={styles.ethosColumns}>
             <p className={styles.ethosText}>
               People who enjoy the part where it stops working. Every robotics video you have seen

@@ -1,12 +1,16 @@
 import { useId } from 'react';
+import { Reveal } from '@/shared/ui';
 import { NEWS } from '../model/news';
 import styles from './LatestRail.module.css';
 
 export function LatestRail() {
   const headingId = useId();
 
+  // The rail is pure signal; an empty one is just a stray heading.
+  if (NEWS.length === 0) return null;
+
   return (
-    <aside aria-labelledby={headingId}>
+    <Reveal as="aside" delay={110} aria-labelledby={headingId}>
       <div className={styles.rail}>
         <h2 id={headingId} className={styles.heading}>
           Latest
@@ -33,6 +37,6 @@ export function LatestRail() {
           All updates →
         </a>
       </div>
-    </aside>
+    </Reveal>
   );
 }

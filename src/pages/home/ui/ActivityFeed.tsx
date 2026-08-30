@@ -1,4 +1,5 @@
 import { Badge, ChipRow, FilterPill, LoadMoreButton } from '@/shared/ui';
+import { cx } from '@/shared/lib';
 import {
   ACTIVITY,
   ACTIVITY_KINDS,
@@ -37,9 +38,17 @@ export function ActivityFeed({ kind, onKindChange, expanded, onExpand }: Activit
         ))}
       </div>
 
+      {matches.length === 0 && (
+        <p className={styles.empty}>
+          {kind === 'all'
+            ? 'Nothing posted yet.'
+            : `No ${ACTIVITY_KIND_LABELS[kind].toLowerCase()} yet.`}
+        </p>
+      )}
+
       <div className={styles.list}>
         {shown.map((item) => (
-          <div key={`${item.date}-${item.title}`} className={styles.row}>
+          <div key={`${item.date}-${item.title}`} className={cx(styles.row, 'nl-fade-up')}>
             <div className={styles.date}>{item.date}</div>
             <div className={styles.body}>
               <div className={styles.text}>
@@ -48,21 +57,39 @@ export function ActivityFeed({ kind, onKindChange, expanded, onExpand }: Activit
                   <span className={styles.source}>{item.source}</span>
                 </div>
                 <h3 className={styles.title}>
-                  <a href="#" className={styles.titleLink}>
-                    {item.title}
-                  </a>
+                  {item.resources?.[0] ? (
+                    <a
+                      href={item.resources[0].href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.titleLink}
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    <span className={styles.titleLink}>{item.title}</span>
+                  )}
                 </h3>
                 {item.authors && <p className={styles.authors}>{item.authors}</p>}
                 {item.quote && <p className={styles.quote}>{item.quote}</p>}
                 {item.resources && <ChipRow items={item.resources} className={styles.resources} />}
                 {item.readLink && (
-                  <a href="#" className={styles.readLink}>
-                    {item.readLink}
+                  <a
+                    href={item.readLink.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.readLink}
+                  >
+                    {item.readLink.label}
                   </a>
                 )}
               </div>
-              {item.thumbnailAlt && (
-                <div role="img" aria-label={item.thumbnailAlt} className={styles.thumb} />
+              {item.image ? (
+                <img src={item.image} alt={item.thumbnailAlt ?? ''} className={styles.thumb} />
+              ) : (
+                item.thumbnailAlt && (
+                  <div role="img" aria-label={item.thumbnailAlt} className={styles.thumb} />
+                )
               )}
             </div>
           </div>

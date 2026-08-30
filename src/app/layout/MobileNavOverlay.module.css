@@ -41,5 +41,4 @@
   font-weight: 600;
   font-size: 24px;
   color: var(--nl-ink-inverse);
-  animation: nlFadeUp 240ms ease-out both;
 }

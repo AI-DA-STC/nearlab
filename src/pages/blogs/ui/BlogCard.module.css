@@ -1,7 +1,3 @@
-.item {
-  animation: nlFadeUp var(--nl-dur-slow) var(--nl-ease-out) both;
-}
-
 .card {
   height: 100%;
   border: 1px solid var(--nl-border);

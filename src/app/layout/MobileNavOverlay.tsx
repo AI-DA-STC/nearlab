@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { NAV_ITEMS } from '@/shared/config';
+import { cx } from '@/shared/lib';
 import styles from './MobileNavOverlay.module.css';
 
 /** Full-screen navigation for narrow viewports. */
@@ -34,7 +35,7 @@ export function MobileNavOverlay({ onClose }: { onClose: () => void }) {
       </div>
       <nav className={styles.nav} aria-label="Primary">
         {NAV_ITEMS.map((item) => (
-          <Link key={item.to} to={item.to} onClick={onClose} className={styles.link}>
+          <Link key={item.to} to={item.to} onClick={onClose} className={cx(styles.link, 'nl-fade-up-fast')}>
             {item.label}
           </Link>
         ))}

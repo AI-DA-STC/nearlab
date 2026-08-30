@@ -8,10 +8,6 @@
   gap: 12px;
 }
 
-.tinted {
-  background: var(--nl-bg-tint);
-}
-
 .title {
   font-family: var(--nl-font-display);
   font-weight: 600;

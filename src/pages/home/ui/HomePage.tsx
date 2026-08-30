@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { PageSection, SectionHeading } from '@/shared/ui';
+import { PageSection, Reveal, SectionHeading } from '@/shared/ui';
+import { cx } from '@/shared/lib';
 import { isActivityKind, type ActivityKind } from '../model/activity';
+import { NEWS } from '../model/news';
 import { HeroSection } from './HeroSection';
 import { FeaturedCarousel } from './FeaturedCarousel';
 import { ActivityFeed } from './ActivityFeed';
@@ -32,8 +34,8 @@ export function HomePage() {
       <FeaturedCarousel />
 
       <PageSection tight aria-label="Lab activity">
-        <div className={styles.feedLayout}>
-          <div>
+        <div className={cx(styles.feedLayout, NEWS.length === 0 && styles.feedFullWidth)}>
+          <Reveal>
             <SectionHeading>Lab activity</SectionHeading>
             <ActivityFeed
               kind={kindFromUrl}
@@ -41,7 +43,7 @@ export function HomePage() {
               expanded={expanded}
               onExpand={() => setExpanded(true)}
             />
-          </div>
+          </Reveal>
           <LatestRail />
         </div>
       </PageSection>

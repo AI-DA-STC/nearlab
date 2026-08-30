@@ -26,7 +26,7 @@ export interface PersonGroup {
 export const LAB_LEAD: Person = {
   name: 'William Teo',
   role: 'Head, NEAR Lab',
-  photo: '/uploads/william.jpeg',
+  photo: '/uploads/people/william.jpeg',
   topics: [],
 };
 
@@ -34,13 +34,13 @@ const STAFF: readonly Person[] = [
   {
     name: 'Jun Hong',
     role: 'Principal AI Engineer',
-    photo: '/uploads/jun hong.png',
+    photo: '/uploads/people/jun-hong.png',
     topics: ['Embedded software', 'Edge AI'],
   },
   {
     name: 'Krishna',
     role: 'Asst. Principal AI Engineer',
-    photo: '/uploads/krishna.png',
+    photo: '/uploads/people/krishna.jpg',
     topics: [
       'Multimodal perception',
       'Manipulation',
@@ -51,37 +51,37 @@ const STAFF: readonly Person[] = [
   {
     name: 'Dibyendu Roy',
     role: 'Principal AI Engineer',
-    photo: '/uploads/roy.png',
+    photo: '/uploads/people/roy.png',
     topics: ['Multi-robot drone swarms'],
   },
   {
     name: 'Jiaying',
     role: 'Principal AI Engineer',
-    photo: '/uploads/jiaying.jpeg',
+    photo: '/uploads/people/jiaying.jpeg',
     topics: ['Multimodal perception', 'Navigation & locomotion'],
   },
   {
     name: 'Kenneth',
     role: 'Senior AI Engineer',
-    photo: '/uploads/kenneth.jpeg',
+    photo: '/uploads/people/kenneth.jpeg',
     topics: ['World models', 'Sim2real & digital twins'],
   },
   {
     name: 'Jeremy',
     role: 'AI Engineer',
-    photo: '/uploads/Jeremy.png',
+    photo: '/uploads/people/jeremy.png',
     topics: ['Software integration', 'Multi-robot drone swarms'],
   },
   {
     name: 'Sean Fong',
     role: 'Lab Manager, Principal AI Engineer',
-    photo: '/uploads/Sean Fong.png',
+    photo: '/uploads/people/sean-fong.png',
     topics: ['Drone flight ops'],
   },
   {
     name: 'Shawn Soh',
     role: 'Principal AI Engineer',
-    photo: '/uploads/shawn.jpeg',
+    photo: '/uploads/people/shawn.jpeg',
     topics: ['Drone perception, navigation & planning'],
   },
 ];
@@ -90,7 +90,7 @@ const CURRENT_INTERNS: readonly Person[] = [
   {
     name: 'Nerissa Kho',
     role: 'Intern · SUTD',
-    photo: '/uploads/nerissa.png',
+    photo: '/uploads/people/nerissa.png',
     topics: ['Drone formation', 'Sim2real & digital twins'],
   },
 ];

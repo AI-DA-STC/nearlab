@@ -25,7 +25,9 @@ src/
   pages/                   One slice per route; each owns its own logic
     home/    ui/ HeroSection · FeaturedCarousel · ActivityFeed · LatestRail
              model/ featured.ts · activity.ts · news.ts
-    themes/  ui/ ThemesPage
+    themes/  ui/ ThemesPage · QuestionBand · PillarVenn · VennPanel · IndustryCard
+             ui/ industry-art · pillar-icons
+             model/ levels.ts · industries.ts
     papers/  ui/ PapersPage · PaperCard
     blogs/   ui/ BlogsPage · BlogCard
     people/  ui/ PeoplePage · PersonCard · PersonLinks · profile-icons
@@ -37,7 +39,7 @@ src/
     publication-filter/      theme + year filtering, shared by papers and blogs
 
   entities/                Domain models consumed by 2+ slices
-    theme/                   the 8-theme taxonomy + short labels
+    theme/                   the 7-region taxonomy (a 3-pillar Venn) + short labels
     paper/                   papers dataset
     blog/                    blogs dataset
 

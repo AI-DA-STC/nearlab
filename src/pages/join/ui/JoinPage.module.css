@@ -1,5 +1,4 @@
 .routes {
-  margin-top: 56px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;

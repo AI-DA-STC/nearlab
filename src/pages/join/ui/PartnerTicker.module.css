@@ -5,14 +5,16 @@
   -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
 }
 
+/* No `gap` here on purpose: the loop translates the track by exactly -50%, so
+   a gap between the two passes would leave the seam half a gap out of register
+   and the ticker would visibly jump each cycle. The spacing lives on `.item`
+   padding instead, which is symmetric across the seam. */
 .track {
   display: flex;
   width: max-content;
-  gap: 16px;
-  animation: nlTicker 32s linear infinite;
 }
 
-.viewport:hover .track {
+.viewport:hover :global(.nl-ticker) {
   animation-play-state: paused;
 }
 
@@ -22,7 +24,7 @@
   align-items: center;
   justify-content: center;
   height: 88px;
-  padding: 0 28px;
+  padding: 0 36px;
 }
 
 .logo {
@@ -32,4 +34,20 @@
   height: auto;
   object-fit: contain;
   display: block;
+}
+
+@media (max-width: 767px) {
+  .viewport {
+    margin-top: 48px;
+  }
+
+  .item {
+    height: 64px;
+    padding: 0 24px;
+  }
+
+  .logo {
+    max-height: 56px;
+    max-width: 180px;
+  }
 }

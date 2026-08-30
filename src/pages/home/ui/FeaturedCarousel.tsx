@@ -12,7 +12,8 @@ export function FeaturedCarousel() {
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (paused) return;
+    // Nothing to rotate through with a single spotlight.
+    if (paused || FEATURED.length <= 1) return;
     const timer = window.setInterval(
       () => setIndex((current) => (current + 1) % FEATURED.length),
       ADVANCE_MS,
@@ -35,11 +36,16 @@ export function FeaturedCarousel() {
           {FEATURED.map((item) => (
             <div key={item.title} className={styles.slide}>
               <div className={styles.split}>
-                <MediaPlaceholder alt={item.mediaAlt} caption={item.mediaCaption} />
+                <MediaPlaceholder
+                  src={item.image}
+                  poster={item.poster}
+                  alt={item.mediaAlt}
+                  caption={item.mediaCaption}
+                />
                 <div>
                   <Eyebrow accent>{item.eyebrow}</Eyebrow>
                   <h3 className={styles.title}>{item.title}</h3>
-                  <p className={styles.authors}>{item.authors}</p>
+                  {item.authors && <p className={styles.authors}>{item.authors}</p>}
                   <p className={styles.summary}>{item.summary}</p>
                   <ChipRow items={item.resources} className={styles.resources} />
                 </div>
@@ -49,7 +55,7 @@ export function FeaturedCarousel() {
         </div>
       </div>
 
-      <div className={styles.tabs}>
+      <div className={styles.tabs} hidden={FEATURED.length <= 1}>
         {FEATURED.map((item, slideIndex) => (
           <button
             key={item.title}

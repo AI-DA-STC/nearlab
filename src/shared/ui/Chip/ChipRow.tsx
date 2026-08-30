@@ -1,9 +1,14 @@
 import { cx } from '@/shared/lib';
 import styles from './ChipRow.module.css';
 
+/** A labelled outbound link — "pdf", "code", "models" and friends. */
+export interface ResourceLink {
+  readonly label: string;
+  readonly href: string;
+}
+
 interface ChipRowProps {
-  /** Resource labels, e.g. ['pdf', 'arXiv', 'code']. */
-  items: readonly string[];
+  items: readonly ResourceLink[];
   className?: string;
 }
 
@@ -13,15 +18,15 @@ export function ChipRow({ items, className }: ChipRowProps) {
 
   return (
     <div className={cx(styles.row, className)}>
-      {items.map((label, index) => (
-        <span key={label} className={styles.item}>
+      {items.map((item, index) => (
+        <span key={item.label} className={styles.item}>
           {index > 0 && (
             <span aria-hidden="true" className={styles.separator}>
               ·
             </span>
           )}
-          <a href="#" className={styles.link}>
-            {label}
+          <a href={item.href} target="_blank" rel="noopener noreferrer" className={styles.link}>
+            {item.label}
           </a>
         </span>
       ))}

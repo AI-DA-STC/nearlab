@@ -1,11 +1,12 @@
 import { Badge, MediaPlaceholder } from '@/shared/ui';
+import { cx } from '@/shared/lib';
 import { themeShortName } from '@/entities/theme';
 import type { Blog } from '@/entities/blog';
 import styles from './BlogCard.module.css';
 
 export function BlogCard({ blog }: { blog: Blog }) {
   return (
-    <li className={styles.item}>
+    <li className={cx(styles.item, 'nl-fade-up')}>
       <a href="#" className={styles.card}>
         <MediaPlaceholder
           alt={`Header image placeholder — ${blog.figure} (16:9)`}

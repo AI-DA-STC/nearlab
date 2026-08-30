@@ -1,6 +1,7 @@
 export { ArrowGlyph } from './ArrowGlyph';
 export { Badge } from './Badge';
 export { ChipRow } from './Chip';
+export type { ResourceLink } from './Chip';
 export { Container } from './Container';
 export { Eyebrow } from './Eyebrow';
 export { FilterPill } from './FilterPill';
@@ -9,5 +10,8 @@ export { LogoMark } from './LogoMark';
 export { MediaPlaceholder } from './MediaPlaceholder';
 export { PageHeading } from './PageHeading';
 export { PageSection } from './PageSection';
+export { Reveal } from './Reveal';
 export { RuledHeading } from './RuledHeading';
+export { SectionBanner } from './SectionBanner';
+export type { BannerMotif } from './SectionBanner';
 export { SectionHeading } from './SectionHeading';

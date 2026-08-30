@@ -1,4 +1,4 @@
-import { Eyebrow, LoadMoreButton, PageHeading, PageSection } from '@/shared/ui';
+import { LoadMoreButton, PageSection, Reveal, SectionBanner } from '@/shared/ui';
 import { BLOGS } from '@/entities/blog';
 import { EmptyResults, PublicationFilterBar, usePublicationFilter } from '@/features/publication-filter';
 import { BlogCard } from './BlogCard';
@@ -8,30 +8,41 @@ export function BlogsPage() {
   const filter = usePublicationFilter(BLOGS, 'blogs');
 
   return (
-    <PageSection>
-      <Eyebrow>Blogs</Eyebrow>
-      <PageHeading className={styles.heading}>Blogs</PageHeading>
-      <p className={styles.intro}>
-        Working notes from the lab — what we tried, what broke, what we would do differently.
-      </p>
+    <>
+      <SectionBanner
+        eyebrow="Writing"
+        title="Blogs"
+        lede="Notes from the lab — what we tried, what broke, and what we would do differently."
+        motif="notes"
+      />
 
-      <PublicationFilterBar filter={filter} />
+      <PageSection>
+        {filter.totalCount > 0 && (
+          <Reveal>
+            <PublicationFilterBar filter={filter} />
+          </Reveal>
+        )}
 
-      <div className={styles.results}>
-        {filter.isEmpty && (
-          <EmptyResults message="No blogs match these filters." onClear={filter.clearAll} />
-        )}
-        <ul className={styles.grid}>
-          {filter.visible.map((blog) => (
-            <BlogCard key={blog.title} blog={blog} />
-          ))}
-        </ul>
-        {filter.hasMore && (
-          <LoadMoreButton onClick={filter.loadMore} ruled>
-            Load more ↓
-          </LoadMoreButton>
-        )}
-      </div>
-    </PageSection>
+        <Reveal delay={110} className={filter.totalCount > 0 ? styles.results : undefined}>
+          {filter.totalCount === 0 ? (
+            <p className={styles.empty}>No blog posts yet.</p>
+          ) : (
+            filter.isEmpty && (
+              <EmptyResults message="No blogs match these filters." onClear={filter.clearAll} />
+            )
+          )}
+          <ul className={styles.grid}>
+            {filter.visible.map((blog) => (
+              <BlogCard key={blog.title} blog={blog} />
+            ))}
+          </ul>
+          {filter.hasMore && (
+            <LoadMoreButton onClick={filter.loadMore} ruled>
+              Load more ↓
+            </LoadMoreButton>
+          )}
+        </Reveal>
+      </PageSection>
+    </>
   );
 }

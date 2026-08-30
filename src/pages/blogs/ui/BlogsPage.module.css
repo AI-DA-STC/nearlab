@@ -1,15 +1,3 @@
-.heading {
-  margin-top: 14px;
-}
-
-.intro {
-  margin-top: 16px;
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: var(--nl-ink-body);
-  max-width: 58ch;
-}
-
 .results {
   margin-top: 40px;
   border-top: 1px solid var(--nl-border);
@@ -32,4 +20,11 @@
   .grid {
     grid-template-columns: 1fr;
   }
+}
+
+.empty {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--nl-ink-muted);
 }
