@@ -28,6 +28,7 @@ export const LAB_LEAD: Person = {
   role: 'Head, NEAR Lab',
   photo: '/uploads/people/william.jpeg',
   topics: [],
+  links: { linkedin: 'https://www.linkedin.com/in/willteo/' },
 };
 
 const STAFF: readonly Person[] = [
@@ -36,6 +37,7 @@ const STAFF: readonly Person[] = [
     role: 'Principal AI Engineer',
     photo: '/uploads/people/jun-hong.png',
     topics: ['Embedded software', 'Edge AI'],
+    links: { linkedin: 'https://www.linkedin.com/in/leejunhong74/' },
   },
   {
     name: 'Krishna',
@@ -47,42 +49,60 @@ const STAFF: readonly Person[] = [
       'RL-based locomotion',
       'Whole-body control',
     ],
+    links: {
+      website: 'https://krishna22112023.github.io/',
+      scholar: 'https://scholar.google.com/citations?user=gHmg-iwAAAAJ&hl=en',
+      linkedin: 'https://www.linkedin.com/in/srikrishna-iyer-449a27143/',
+      github: 'https://github.com/krishna22112023',
+    },
   },
   {
     name: 'Dibyendu Roy',
     role: 'Principal AI Engineer',
     photo: '/uploads/people/roy.png',
     topics: ['Multi-robot drone swarms'],
+    links: {
+      scholar: 'https://scholar.google.com/citations?user=7wXXB3AAAAAJ&hl=en',
+      linkedin: 'https://sg.linkedin.com/in/dibyendu-roy-phd-11bb6569',
+    },
   },
   {
     name: 'Jiaying',
     role: 'Principal AI Engineer',
     photo: '/uploads/people/jiaying.jpeg',
     topics: ['Multimodal perception', 'Navigation & locomotion'],
+    links: {
+      linkedin: 'https://sg.linkedin.com/in/jiaying-chen-33bb6510b',
+    },
   },
   {
     name: 'Kenneth',
     role: 'Senior AI Engineer',
     photo: '/uploads/people/kenneth.jpeg',
     topics: ['World models', 'Sim2real & digital twins'],
+    links: {
+      scholar: 'https://scholar.google.com/citations?user=pp9IhSQAAAAJ&hl=en',
+      linkedin: 'https://www.linkedin.com/in/kenneth-ongjk/',
+    },
   },
   {
     name: 'Jeremy',
     role: 'AI Engineer',
     photo: '/uploads/people/jeremy.png',
     topics: ['Software integration', 'Multi-robot drone swarms'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/jeremychh/',
+      github: 'https://github.com/JChiaHH',
+    },
   },
   {
     name: 'Sean Fong',
     role: 'Lab Manager, Principal AI Engineer',
     photo: '/uploads/people/sean-fong.png',
     topics: ['Drone flight ops'],
-  },
-  {
-    name: 'Shawn Soh',
-    role: 'Principal AI Engineer',
-    photo: '/uploads/people/shawn.jpeg',
-    topics: ['Drone perception, navigation & planning'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/sean-fong-b8269543/',
+    },
   },
 ];
 
@@ -92,6 +112,10 @@ const CURRENT_INTERNS: readonly Person[] = [
     role: 'Intern · SUTD',
     photo: '/uploads/people/nerissa.png',
     topics: ['Drone formation', 'Sim2real & digital twins'],
+    links: {
+      website: 'https://sites.google.com/view/nerissa-kho/home',
+      linkedin: 'https://sg.linkedin.com/in/nerissa-kho-7ba5b4224',
+    },
   },
 ];
 

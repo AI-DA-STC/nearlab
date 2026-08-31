@@ -1,0 +1,64 @@
+.rail {
+  position: sticky;
+  top: calc(var(--nl-header-height) + 24px);
+}
+
+.label {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nl-ink-faintest);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--nl-border);
+}
+
+.list {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.link {
+  display: block;
+  padding: 5px 0 5px 12px;
+  border-left: 2px solid var(--nl-border);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--nl-ink-muted);
+  transition:
+    color var(--nl-dur-fast) ease-out,
+    border-color var(--nl-dur-fast) ease-out;
+}
+
+.link:hover {
+  color: var(--nl-link-hover);
+  border-color: var(--nl-border-strong);
+}
+
+/* Subsections sit in from their parent, and read one step quieter. */
+.nested {
+  padding-left: 24px;
+  font-size: 12.5px;
+  color: var(--nl-ink-faint);
+}
+
+.active {
+  color: var(--nl-navy);
+  border-color: var(--nl-navy);
+  font-weight: 500;
+}
+
+/* Below the two-column breakpoint the rail runs inline, above the prose. */
+@media (max-width: 1023px) {
+  .rail {
+    position: static;
+    margin-bottom: 32px;
+    padding: 16px;
+    border: 1px solid var(--nl-border);
+    border-radius: var(--nl-radius);
+    background: var(--nl-bg-tint);
+  }
+}

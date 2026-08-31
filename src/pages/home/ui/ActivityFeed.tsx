@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Badge, ChipRow, FilterPill, LoadMoreButton } from '@/shared/ui';
 import { cx } from '@/shared/lib';
 import {
@@ -5,6 +6,7 @@ import {
   ACTIVITY_KINDS,
   ACTIVITY_KIND_LABELS,
   ACTIVITY_TOTALS,
+  formatActivityDate,
   type ActivityKind,
 } from '../model/activity';
 import styles from './ActivityFeed.module.css';
@@ -48,8 +50,8 @@ export function ActivityFeed({ kind, onKindChange, expanded, onExpand }: Activit
 
       <div className={styles.list}>
         {shown.map((item) => (
-          <div key={`${item.date}-${item.title}`} className={cx(styles.row, 'nl-fade-up')}>
-            <div className={styles.date}>{item.date}</div>
+          <div key={`${item.on}-${item.title}`} className={cx(styles.row, 'nl-fade-up')}>
+            <div className={styles.date}>{item.dateLabel ?? formatActivityDate(item.on)}</div>
             <div className={styles.body}>
               <div className={styles.text}>
                 <div className={styles.tags}>
@@ -57,7 +59,11 @@ export function ActivityFeed({ kind, onKindChange, expanded, onExpand }: Activit
                   <span className={styles.source}>{item.source}</span>
                 </div>
                 <h3 className={styles.title}>
-                  {item.resources?.[0] ? (
+                  {item.to ? (
+                    <Link to={item.to} className={styles.titleLink}>
+                      {item.title}
+                    </Link>
+                  ) : item.resources?.[0] ? (
                     <a
                       href={item.resources[0].href}
                       target="_blank"

@@ -21,9 +21,23 @@ export interface Industry {
 }
 
 export const INDUSTRIES: readonly Industry[] = [
-  { index: '01', title: 'Disaster response & search and rescue', motif: 'rubble' },
-  { index: '02', title: 'Space & planetary teams', motif: 'orbit' },
-  { index: '03', title: 'Maritime & ports', motif: 'harbour' },
-  { index: '04', title: 'Critical infrastructure & industry', motif: 'tunnel' },
-  { index: '05', title: 'Public safety & security', motif: 'shield' },
+  {
+    index: '01',
+    title: 'Disaster response & search and rescue',
+    motif: 'rubble',
+    image: '/uploads/themes/search_rescue.png',
+  },
+  { index: '02', title: 'Maritime & ports', motif: 'harbour', image: '/uploads/themes/marine.png' },
+  {
+    index: '03',
+    title: 'Critical infrastructure & industry',
+    motif: 'tunnel',
+    image: '/uploads/themes/critical_infrastructure.jpg',
+  },
+  {
+    index: '04',
+    title: 'Public safety & security',
+    motif: 'shield',
+    image: '/uploads/themes/security.png',
+  },
 ];

@@ -5,6 +5,7 @@ import { HomePage } from '@/pages/home';
 import { ThemesPage } from '@/pages/themes';
 import { PapersPage } from '@/pages/papers';
 import { BlogsPage } from '@/pages/blogs';
+import { BlogPostPage } from '@/pages/blog-post';
 import { PeoplePage } from '@/pages/people';
 import { JoinPage } from '@/pages/join';
 
@@ -19,6 +20,7 @@ export const router = createHashRouter([
       { path: 'themes', element: <ThemesPage /> },
       { path: 'papers', element: <PapersPage /> },
       { path: 'blogs', element: <BlogsPage /> },
+      { path: 'blogs/:slug', element: <BlogPostPage /> },
       { path: 'people', element: <PeoplePage /> },
       { path: 'join', element: <JoinPage /> },
     ],

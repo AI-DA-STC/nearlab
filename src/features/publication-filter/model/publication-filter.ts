@@ -15,6 +15,8 @@ const PAGE_SIZE = 9;
 /** Anything this feature can filter: it needs a theme and a year. */
 export interface Publication {
   readonly themeId: ThemeId;
+  /** Empty for an item with no year to file it under — ongoing work. It gets
+   *  no pill of its own and drops out whenever a year is selected. */
   readonly year: string;
 }
 
@@ -56,7 +58,7 @@ export function usePublicationFilter<T extends Publication>(
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const years = useMemo(
-    () => [...new Set(items.map((item) => item.year))].sort().reverse(),
+    () => [...new Set(items.map((item) => item.year))].filter(Boolean).sort().reverse(),
     [items],
   );
 

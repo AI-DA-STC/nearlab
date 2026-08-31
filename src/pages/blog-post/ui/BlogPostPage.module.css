@@ -1,0 +1,222 @@
+.masthead {
+  padding-top: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--nl-border);
+}
+
+.back {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--nl-ink-faint);
+}
+
+.back:hover {
+  color: var(--nl-link-hover);
+}
+
+.eyebrow {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin-top: 14px;
+  max-width: 24ch;
+  font-family: var(--nl-font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--nl-ink-heading);
+}
+
+.standfirst {
+  margin-top: 16px;
+  max-width: 68ch;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--nl-ink-muted);
+}
+
+.byline {
+  margin-top: 20px;
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--nl-ink-faint);
+}
+
+/* Contents rail, then the prose on the site's reading measure. */
+.layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.layoutWide {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.note {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--nl-ink-muted);
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 1023px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
+/* ---- Prose -------------------------------------------------------------
+   Styling for markdown-generated HTML, so these are element selectors: the
+   post's body has no class names of its own to hook onto. */
+
+.prose {
+  max-width: 72ch;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--nl-ink-body);
+}
+
+.prose > * + * {
+  margin-top: 20px;
+}
+
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-family: var(--nl-font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--nl-ink-heading);
+  /* Clears the sticky site header when a contents link jumps here. */
+  scroll-margin-top: calc(var(--nl-header-height) + 24px);
+}
+
+.prose h2 {
+  margin-top: 44px;
+  padding-top: 18px;
+  border-top: 1px solid var(--nl-border);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.prose h3 {
+  margin-top: 32px;
+  font-size: 1.1875rem;
+  line-height: 1.3;
+}
+
+.prose h4 {
+  margin-top: 24px;
+  font-size: 1rem;
+}
+
+.prose a {
+  color: var(--nl-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--nl-link-hover);
+}
+
+.prose strong {
+  font-weight: 600;
+  color: var(--nl-ink-heading);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 22px;
+  list-style: revert;
+}
+
+.prose li + li {
+  margin-top: 6px;
+}
+
+.prose li::marker {
+  color: var(--nl-ink-faintest);
+}
+
+.prose blockquote {
+  padding: 4px 0 4px 18px;
+  border-left: 2px solid var(--nl-border-strong);
+  color: var(--nl-ink-muted);
+}
+
+.prose code {
+  font-family: var(--nl-font-mono);
+  font-size: 0.875em;
+  background: var(--nl-bg-tint);
+  border: 1px solid var(--nl-border);
+  border-radius: var(--nl-radius);
+  padding: 1px 5px;
+}
+
+.prose pre {
+  padding: 16px 18px;
+  background: var(--nl-bg-deep);
+  border-radius: var(--nl-radius);
+  overflow-x: auto;
+}
+
+/* The block already carries the frame; the span inside should not repeat it. */
+.prose pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--nl-ink-inverse-soft);
+}
+
+.prose img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--nl-border);
+  border-radius: var(--nl-radius);
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--nl-border);
+}
+
+/* A wide table scrolls inside its own box rather than the page. */
+.prose table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.prose th,
+.prose td {
+  padding: 8px 14px 8px 0;
+  border-bottom: 1px solid var(--nl-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  font-family: var(--nl-font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--nl-ink-faint);
+}

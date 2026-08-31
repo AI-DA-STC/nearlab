@@ -104,8 +104,8 @@
 
 .thumb {
   flex: none;
-  width: 96px;
-  height: 54px;
+  width: 240px;
+  height: 135px;
   background: var(--nl-bg-tint);
   border: 1px solid var(--nl-border);
   border-radius: var(--nl-radius);
@@ -126,5 +126,11 @@
   .row {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  /* The thumbnail keeps its 16:9 frame but gives the text column room back. */
+  .thumb {
+    width: 128px;
+    height: 72px;
   }
 }

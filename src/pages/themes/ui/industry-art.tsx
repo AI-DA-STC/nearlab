@@ -12,7 +12,7 @@ import type { ReactElement } from 'react';
  * A mission that later gains real footage sets `image` instead and the motif
  * drops out — see `MissionCard`.
  */
-export type IndustryMotif = 'rubble' | 'orbit' | 'harbour' | 'tunnel' | 'shield';
+export type IndustryMotif = 'rubble' | 'harbour' | 'tunnel' | 'shield';
 
 const FRAME = {
   viewBox: '0 0 160 90',
@@ -36,23 +36,6 @@ function RubbleArt() {
       <path d="M99 22h-6M113 22h6" opacity="0.9" />
       <path d="M96 34a14 14 0 0 0 20 0" opacity="0.35" />
       <path d="M90 40a24 24 0 0 0 32 0" opacity="0.22" />
-    </svg>
-  );
-}
-
-/** A rover on a planetary limb, and the long link home. */
-function OrbitArt() {
-  return (
-    <svg {...FRAME} aria-hidden="true">
-      <path d="M4 84a76 40 0 0 1 152 0" opacity="0.55" />
-      <ellipse cx="80" cy="46" rx="66" ry="26" opacity="0.28" strokeDasharray="4 7" />
-      <rect x="62" y="62" width="22" height="11" rx="1.5" opacity="0.9" />
-      <circle cx="67" cy="76" r="3.5" opacity="0.9" />
-      <circle cx="79" cy="76" r="3.5" opacity="0.9" />
-      <path d="M73 62V54" opacity="0.9" />
-      <path d="M66 52h14" opacity="0.9" />
-      <circle cx="139" cy="26" r="3" opacity="0.9" />
-      <path d="M78 50 136 28" opacity="0.3" strokeDasharray="3 6" />
     </svg>
   );
 }
@@ -109,7 +92,6 @@ function ShieldArt() {
 
 const MOTIFS: Record<IndustryMotif, () => ReactElement> = {
   rubble: RubbleArt,
-  orbit: OrbitArt,
   harbour: HarbourArt,
   tunnel: TunnelArt,
   shield: ShieldArt,

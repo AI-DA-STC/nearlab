@@ -9,6 +9,11 @@ export const ROUTES = {
   join: '/join',
 } as const;
 
+/** A single post's path. The listing links to it, the router matches it. */
+export function blogPostPath(slug: string): string {
+  return `${ROUTES.blogs}/${slug}`;
+}
+
 export interface NavItem {
   readonly label: string;
   readonly to: string;

@@ -13,6 +13,9 @@ export interface Paper {
   /** Omitted until the author list is confirmed. */
   readonly authors?: string;
   readonly publishedOn: string;
+  /** The same date as `publishedOn`, ISO and sortable: `YYYY-MM`, or
+   *  `YYYY-MM-DD` where the day is known. Never rendered — `publishedOn` is. */
+  readonly publishedAt: string;
   readonly themeId: ThemeId;
   readonly resources: readonly ResourceLink[];
   /** Card artwork under `public/`. Falls back to a caption box when absent.
@@ -31,9 +34,10 @@ export const RL2_VLA: Paper = {
   venue: 'arXiv 2026',
   year: '2026',
   publishedOn: 'Jul 2026',
+  publishedAt: '2026-07',
   themeId: 3,
-  image: '/uploads/papers/rl2-vla.mp4',
-  poster: '/uploads/papers/rl2-vla-poster.jpg',
+  image: '/uploads/papers/rl2-vla.gif',
+  poster: '/uploads/papers/rl2-vla.gif',
   figure: 'teaser — latent compositional steering',
   resources: [
     { label: 'website', href: 'https://rl2-vla.github.io/' },
