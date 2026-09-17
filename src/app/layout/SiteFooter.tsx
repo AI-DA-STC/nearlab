@@ -20,13 +20,13 @@ export function SiteFooter() {
               <LogoMark tone="inverse" />
               <span className={styles.wordmark}>NEAR LAB</span>
             </div>
-            <p className={styles.blurb}>Next generation AI &amp; Robotics Lab.</p>
+            <p className={styles.blurb}>Next-gen Edge AI and Robotics Lab.</p>
             <p className={styles.blurb}>
               AI.R STC, Group Technology Office
               <br />
               ST Engineering
               <br />
-              600W Camp Road, Singapore
+              Seletar Digital Hub, 600 West Camp Road, Singapore
             </p>
           </div>
 

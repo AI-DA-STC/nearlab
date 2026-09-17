@@ -36,6 +36,7 @@ export function PersonCard({ person }: { person: Person }) {
           <div className={styles.name}>{person.name}</div>
           <div className={styles.role}>{person.role}</div>
           {hasTopics && <div className={styles.topicLine}>{person.topics.join(', ')}</div>}
+          {person.bio && <p className={styles.bio}>{person.bio}</p>}
           <PersonLinks links={person.links} name={person.name} />
         </div>
       </div>
