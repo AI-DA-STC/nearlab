@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Eyebrow, PageSection, Reveal, SectionBanner, SectionHeading } from '@/shared/ui';
+import { useDocumentMeta } from '@/shared/lib';
 import type { ThemeId } from '@/entities/theme';
 import { INDUSTRIES } from '../model/industries';
 import { LEVELS } from '../model/levels';
@@ -11,8 +12,12 @@ import styles from './ThemesPage.module.css';
 /** The centre region. The page opens on the lab's own thesis. */
 const DEFAULT_REGION: ThemeId = 6;
 
+const DESCRIPTION =
+  'Artificial intelligence, physical embodiment and multi-robot systems — and the work that happens where they overlap.';
+
 export function ThemesPage() {
   const [region, setRegion] = useState<ThemeId>(DEFAULT_REGION);
+  useDocumentMeta({ title: 'Research themes', description: DESCRIPTION });
 
   return (
     <>

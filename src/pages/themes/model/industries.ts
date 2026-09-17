@@ -38,6 +38,6 @@ export const INDUSTRIES: readonly Industry[] = [
     index: '04',
     title: 'Public safety & security',
     motif: 'shield',
-    image: '/uploads/themes/security.png',
+    image: '/uploads/themes/security.webp',
   },
 ];

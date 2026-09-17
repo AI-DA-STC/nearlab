@@ -1,10 +1,15 @@
 import { LoadMoreButton, PageSection, Reveal, SectionBanner } from '@/shared/ui';
+import { useDocumentMeta } from '@/shared/lib';
 import { PAPERS } from '@/entities/paper';
 import { EmptyResults, PublicationFilterBar, usePublicationFilter } from '@/features/publication-filter';
 import { PaperCard } from './PaperCard';
 import styles from './PapersPage.module.css';
 
+const LEDE =
+  'Peer-reviewed work and preprints, 2024–2026 — filterable by research theme, venue and year.';
+
 export function PapersPage() {
+  useDocumentMeta({ title: 'Papers', description: LEDE });
   const filter = usePublicationFilter(PAPERS, 'papers');
 
   return (
@@ -12,7 +17,7 @@ export function PapersPage() {
       <SectionBanner
         eyebrow="Publications"
         title="Papers"
-        lede="Peer-reviewed work and preprints, 2024–2026 — filterable by research theme, venue and year."
+        lede={LEDE}
         motif="papers"
       />
 

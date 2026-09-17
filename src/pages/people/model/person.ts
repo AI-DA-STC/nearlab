@@ -32,21 +32,25 @@ export const LAB_LEAD: Person = {
   photo: '/uploads/people/william.jpeg',
   bio: 'Studies how teams of robots learn to coordinate — the strategies they form, the skills individual robots acquire, and the conditions under which that coordination holds or breaks — with a broader interest in world-action models and how learned policies stay robust inside a team. PhD researcher at the MARMoT Lab (NUS) supervised by Guillaume Sartoretti; before robotics, a chartered accountant and MIT supply-chain graduate.',
   topics: [],
-  links: { linkedin: 'https://www.linkedin.com/in/willteo/' },
+  links: {
+    website: 'https://www.william-teo.com',
+    scholar: 'https://scholar.google.com/citations?user=kgn0kGkAAAAJ&hl=en',
+    linkedin: 'https://www.linkedin.com/in/willteo/',
+  },
 };
 
 const STAFF: readonly Person[] = [
   {
     name: 'Jun Hong',
     role: 'Principal AI Engineer',
-    photo: '/uploads/people/jun-hong.png',
+    photo: '/uploads/people/jun-hong.webp',
     topics: ['Embedded software', 'Edge AI'],
     links: { linkedin: 'https://www.linkedin.com/in/leejunhong74/' },
   },
   {
     name: 'Krishna',
     role: 'Asst. Principal AI Engineer',
-    photo: '/uploads/people/krishna.jpg',
+    photo: '/uploads/people/krishna.webp',
     bio: 'Research translation and proof-of-concept development, bridging academic research from institutes of higher learning to real-world applications. His work spans embodied AI for manipulation and loco-manipulation — perception and long-horizon planning, safe and generalisable embodied learning, and human–multi-agent collaboration. Holds a B.Eng. in electronics and communication engineering (VIT Vellore) and an M.Eng. in control and automation (NTU).',
     topics: [
       'Multimodal perception',
@@ -95,7 +99,7 @@ const STAFF: readonly Person[] = [
   {
     name: 'Jeremy',
     role: 'AI Engineer',
-    photo: '/uploads/people/jeremy.png',
+    photo: '/uploads/people/jeremy.webp',
     topics: ['Software integration', 'Multi-robot drone swarms'],
     links: {
       linkedin: 'https://www.linkedin.com/in/jeremychh/',

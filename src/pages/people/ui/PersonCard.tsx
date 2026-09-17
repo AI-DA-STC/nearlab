@@ -18,6 +18,7 @@ export function PersonCard({ person }: { person: Person }) {
               src={person.photo}
               alt={person.name}
               className={styles.photo}
+              loading="lazy"
               onError={() => setPhotoFailed(true)}
             />
           )}

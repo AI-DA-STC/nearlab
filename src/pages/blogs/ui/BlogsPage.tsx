@@ -1,10 +1,15 @@
 import { LoadMoreButton, PageSection, Reveal, SectionBanner } from '@/shared/ui';
+import { useDocumentMeta } from '@/shared/lib';
 import { BLOGS } from '@/entities/blog';
 import { EmptyResults, PublicationFilterBar, usePublicationFilter } from '@/features/publication-filter';
 import { BlogCard } from './BlogCard';
 import styles from './BlogsPage.module.css';
 
+const LEDE =
+  'Notes from the lab — what we tried, what broke, and what we would do differently.';
+
 export function BlogsPage() {
+  useDocumentMeta({ title: 'Blogs', description: LEDE });
   const filter = usePublicationFilter(BLOGS, 'blogs');
 
   return (
@@ -12,7 +17,7 @@ export function BlogsPage() {
       <SectionBanner
         eyebrow="Writing"
         title="Blogs"
-        lede="Notes from the lab — what we tried, what broke, and what we would do differently."
+        lede={LEDE}
         motif="notes"
       />
 

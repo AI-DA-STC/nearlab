@@ -1,18 +1,19 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PageSection, Reveal, SectionHeading } from '@/shared/ui';
-import { cx } from '@/shared/lib';
+import { cx, useDocumentMeta } from '@/shared/lib';
 import { isActivityKind, type ActivityKind } from '../model/activity';
 import { NEWS } from '../model/news';
 import { HeroSection } from './HeroSection';
 import { FeaturedCarousel } from './FeaturedCarousel';
 import { ActivityFeed } from './ActivityFeed';
-import { LatestRail } from './LatestRail';
+import { ACTIVITY_ANCHOR_ID, LatestRail } from './LatestRail';
 import styles from './HomePage.module.css';
 
 export function HomePage() {
   const { feedFilter } = useParams();
   const navigate = useNavigate();
+  useDocumentMeta();
 
   // The feed filter is addressable as /home/:kind, matching the original
   // prototype's `#home/papers` deep links.
@@ -36,7 +37,7 @@ export function HomePage() {
       <PageSection tight aria-label="Lab activity">
         <div className={cx(styles.feedLayout, NEWS.length === 0 && styles.feedFullWidth)}>
           <Reveal>
-            <SectionHeading>Lab activity</SectionHeading>
+            <SectionHeading id={ACTIVITY_ANCHOR_ID}>Lab activity</SectionHeading>
             <ActivityFeed
               kind={kindFromUrl}
               onKindChange={handleKindChange}

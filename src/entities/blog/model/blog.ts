@@ -26,10 +26,12 @@ export interface Blog {
   /** Year filter bucket. Empty for an ongoing post, which has no year to file
    *  it under and so shows only under "All". */
   readonly year: string;
-  readonly readingTime: string;
+  /** Omitted while the post has no body, so a tile never advertises a read
+   *  that is not there yet. */
+  readonly readingTime?: string;
   readonly themeId: ThemeId;
-  /** Tile and feed artwork, from the post's own folder. An animated `.gif` is
-   *  fine here — it is rendered as an image. */
+  /** Tile and feed artwork, from the post's own folder. An animated `.webp`
+   *  or `.gif` is fine here — it is rendered as an image. */
   readonly image?: string;
   /** Caption shown on the placeholder when there is no `image`. */
   readonly figure: string;
@@ -42,11 +44,10 @@ const POSTS: readonly Blog[] = [
     excerpt:
       'A standardized skill acquisition framework for scalable simulation based training for wheeled quadrupeds using PPO for navigating complex search-and-rescue environments.',
     markdown: '/uploads/blogs/multi_expert_distillation/multi_expert_distillation.md',
-    image: '/uploads/blogs/multi_expert_distillation/thumbnail.gif',
+    image: '/uploads/blogs/multi_expert_distillation/thumbnail.webp',
     publishedOn: 'Jul 2026',
     publishedAt: '2026-07',
     year: '2026',
-    readingTime: '11 min read',
     themeId: 3,
     figure: 'terrain curriculum — the five expert policies',
   },
@@ -56,11 +57,10 @@ const POSTS: readonly Blog[] = [
     excerpt:
       'A ROS1 bridge and policy router for running openpi VLA policies (without finetuning) on the AgileX Cobot Magic for table-top single-arm manipulation.',
     markdown: '/uploads/blogs/vla_cobot_magic/vla_cobot_magic.md',
-    image: '/uploads/blogs/vla_cobot_magic/thumbnail.png',
+    image: '/uploads/blogs/vla_cobot_magic/thumbnail.webp',
     publishedOn: 'Jun 2026',
     publishedAt: '2026-06',
     year: '2026',
-    readingTime: '9 min read',
     themeId: 3,
     figure: 'the bridge — ROS1 topics to openpi observations',
   },
@@ -73,7 +73,6 @@ const POSTS: readonly Blog[] = [
     image: '/uploads/blogs/waypoint_navigation_m20/thumbnail.gif',
     publishedOn: 'Ongoing',
     year: '',
-    readingTime: '14 min read',
     themeId: 1,
     figure: 'the waypoint graph over the GLIM point cloud',
   },
@@ -83,11 +82,10 @@ const POSTS: readonly Blog[] = [
     excerpt:
       "A visibility graph instead of a costmap: polygons extracted as the robot drives, edges disconnected when something blocks the line of sight and reconnected when it clears. Reproducing CMU's FAR Planner, and what the paper doesn't tell you about tuning it.",
     markdown: '/uploads/blogs/far_planner/far_planner.md',
-    image: '/uploads/blogs/far_planner/thumbnail.gif',
+    image: '/uploads/blogs/far_planner/thumbnail.webp',
     publishedOn: 'Jul 2026',
     publishedAt: '2026-07',
     year: '2026',
-    readingTime: '12 min read',
     themeId: 1,
     figure: 'visibility graph — polygons extracted mid-drive',
   },
@@ -101,6 +99,11 @@ export const BLOGS: readonly Blog[] = [...POSTS].sort((a, b) => {
   if (!a.publishedAt || !b.publishedAt) return Number(!a.publishedAt) - Number(!b.publishedAt);
   return b.publishedAt.localeCompare(a.publishedAt);
 });
+
+/** The tile's date line: the date, and the reading time once there is one. */
+export function blogMetaLine(blog: Blog): string {
+  return blog.readingTime ? `${blog.publishedOn} · ${blog.readingTime}` : blog.publishedOn;
+}
 
 export function blogBySlug(slug: string | undefined): Blog | undefined {
   return BLOGS.find((blog) => blog.slug === slug);

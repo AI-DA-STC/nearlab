@@ -80,7 +80,7 @@ export function MediaPlaceholder({
             tabIndex={-1}
           />
         ) : (
-          <img src={src} alt={alt} className={cx(frameClass, styles.image)} />
+          <img src={src} alt={alt} className={cx(frameClass, styles.image)} loading="lazy" />
         )
       ) : (
         <div role="img" aria-label={alt} className={frameClass}>

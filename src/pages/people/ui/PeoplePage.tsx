@@ -1,17 +1,23 @@
 import { PageSection, Reveal, RuledHeading, SectionBanner } from '@/shared/ui';
+import { useDocumentMeta } from '@/shared/lib';
 import { ALUMNI, LAB_LEAD, PEOPLE_GROUPS } from '../model/person';
 import { PersonCard } from './PersonCard';
 import styles from './PeoplePage.module.css';
 
-const TEAM_PHOTO = '/uploads/people/team.jpg';
+const TEAM_PHOTO = '/uploads/people/team.webp';
+
+const LEDE =
+  'Research staff, engineers and interns, plus the university collaborators and alumni who have passed through the lab.';
 
 export function PeoplePage() {
+  useDocumentMeta({ title: 'People', description: LEDE });
+
   return (
     <>
       <SectionBanner
         eyebrow="People"
         title="Meet the team"
-        lede="Research staff, engineers and interns, plus the university collaborators and alumni who have passed through the lab."
+        lede={LEDE}
         motif="roster"
         photo={{
           src: TEAM_PHOTO,

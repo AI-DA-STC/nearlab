@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Badge, Container, Eyebrow, PageSection } from '@/shared/ui';
 import { ROUTES } from '@/shared/config';
-import { cx, renderMarkdown, type MarkdownDoc } from '@/shared/lib';
-import { blogBySlug } from '@/entities/blog';
+import { cx, renderMarkdown, useDocumentMeta, type MarkdownDoc } from '@/shared/lib';
+import { blogBySlug, blogMetaLine } from '@/entities/blog';
 import { themeShortName } from '@/entities/theme';
 import { TableOfContents } from './TableOfContents';
 import styles from './BlogPostPage.module.css';
@@ -26,6 +26,7 @@ export function BlogPostPage() {
   const { slug } = useParams();
   const blog = blogBySlug(slug);
   const [state, setState] = useState<LoadState>({ status: 'loading' });
+  useDocumentMeta({ title: blog?.title ?? 'Post not found', description: blog?.excerpt });
 
   useEffect(() => {
     if (!blog) return;
@@ -75,9 +76,7 @@ export function BlogPostPage() {
         </Link>
         <Eyebrow className={styles.eyebrow}>
           <Badge>{themeShortName(blog.themeId)}</Badge>
-          <span>
-            {blog.publishedOn} · {blog.readingTime}
-          </span>
+          <span>{blogMetaLine(blog)}</span>
         </Eyebrow>
         <h1 className={styles.title}>{blog.title}</h1>
         <p className={styles.standfirst}>{blog.excerpt}</p>
