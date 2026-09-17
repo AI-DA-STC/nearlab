@@ -3,10 +3,10 @@ import { Container, LogoMark } from '@/shared/ui';
 import { CONTACT_EMAIL, NAV_ITEMS } from '@/shared/config';
 import styles from './SiteFooter.module.css';
 
+// Only real destinations: a dead `href="#"` reads as a broken link rather
+// than as an absence. Social profiles are added here once they exist.
 const SOCIAL_LINKS = [
-  { label: 'LinkedIn', href: '#' },
-  { label: 'YouTube', href: '#' },
-  { label: 'GitHub', href: '#' },
+  { label: 'GitHub', href: 'https://github.com/AI-DA-STC' },
   { label: 'Email', href: `mailto:${CONTACT_EMAIL}` },
 ];
 

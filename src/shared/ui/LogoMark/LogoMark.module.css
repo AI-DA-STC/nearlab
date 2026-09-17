@@ -1,0 +1,15 @@
+/* The logo is square dark ink on transparency. Rendered at header height in
+   the masthead, and flipped to white against the dark footer. */
+
+.photo {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.inverse {
+  height: 34px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
