@@ -27,5 +27,3 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { label: 'People', to: ROUTES.people },
   { label: 'Join', to: ROUTES.join },
 ];
-
-export const CONTACT_EMAIL = 'near.lab@stengg.com';

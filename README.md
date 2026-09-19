@@ -47,7 +47,7 @@ src/
     ui/                      Container · PageSection · headings · Badge · ChipRow
                              FilterPill · LoadMoreButton · MediaPlaceholder
                              LogoMark · ArrowGlyph · Eyebrow
-    config/                  route paths, nav items, contact address
+    config/                  route paths, nav items
     lib/                     cx()
 ```
 

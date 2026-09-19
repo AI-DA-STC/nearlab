@@ -1,6 +1,5 @@
 import type { MouseEvent } from 'react';
 import { ArrowGlyph, Eyebrow } from '@/shared/ui';
-import { CONTACT_EMAIL } from '@/shared/config';
 import { isInPageAnchor, scrollToAnchor } from '@/shared/lib';
 import type { CollaborationRoute } from '../model/collaboration';
 import styles from './RouteCard.module.css';
@@ -30,11 +29,6 @@ export function RouteCard({ route }: { route: CollaborationRoute }) {
         <a href={route.href} onClick={inPage ? handleClick : undefined} className={styles.action}>
           {route.linkLabel}
         </a>
-        {route.showEmail && (
-          <a href={`mailto:${CONTACT_EMAIL}`} className={styles.action}>
-            Drop us an email →
-          </a>
-        )}
       </div>
     </li>
   );

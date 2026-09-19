@@ -1,14 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Container, LogoMark } from '@/shared/ui';
-import { CONTACT_EMAIL, NAV_ITEMS } from '@/shared/config';
+import { NAV_ITEMS } from '@/shared/config';
 import styles from './SiteFooter.module.css';
 
 // Only real destinations: a dead `href="#"` reads as a broken link rather
-// than as an absence. Social profiles are added here once they exist.
-const SOCIAL_LINKS = [
-  { label: 'GitHub', href: 'https://github.com/AI-DA-STC' },
-  { label: 'Email', href: `mailto:${CONTACT_EMAIL}` },
-];
+// than as an absence. Social profiles, and the lab inbox once IT provisions
+// one, are added here when they exist.
+const SOCIAL_LINKS = [{ label: 'GitHub', href: 'https://github.com/AI-DA-STC' }];
 
 export function SiteFooter() {
   return (
