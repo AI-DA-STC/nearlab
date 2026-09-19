@@ -6,7 +6,7 @@ import { BlogCard } from './BlogCard';
 import styles from './BlogsPage.module.css';
 
 const LEDE =
-  'Notes from the lab — what we tried, what broke, and what we would do differently.';
+  'Notes from the lab: what we tried, what broke, and what we would do differently.';
 
 export function BlogsPage() {
   useDocumentMeta({ title: 'Blogs', description: LEDE });

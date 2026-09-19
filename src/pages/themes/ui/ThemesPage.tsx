@@ -13,7 +13,7 @@ import styles from './ThemesPage.module.css';
 const DEFAULT_REGION: ThemeId = 6;
 
 const DESCRIPTION =
-  'Artificial intelligence, physical embodiment and multi-robot systems — and the work that happens where they overlap.';
+  'Our research sits where artificial intelligence, physical embodiment and multi-robot systems overlap.';
 
 export function ThemesPage() {
   const [region, setRegion] = useState<ThemeId>(DEFAULT_REGION);
@@ -29,8 +29,8 @@ export function ThemesPage() {
           <SectionHeading className={styles.heading}>Where the three areas meet.</SectionHeading>
           <p className={styles.lede}>
             Artificial intelligence, physical embodiment and multi-robot systems. Our most
-            distinctive work is not inside any one of them — it is where they overlap, so every
-            region here is a place work actually happens.
+            distinctive work sits where they overlap, and every region of the diagram has real work
+            in it.
           </p>
         </Reveal>
 
@@ -46,7 +46,7 @@ export function ThemesPage() {
             <Eyebrow>Where we prove it</Eyebrow>
             <SectionHeading className={styles.heading}>Industries</SectionHeading>
             <p className={styles.lede}>
-              Each of these puts all three problems in one place — and the work still has to get
+              Each of these puts all three problems in one place, and the work still has to get
               done.
             </p>
 

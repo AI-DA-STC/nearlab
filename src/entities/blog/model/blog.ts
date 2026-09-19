@@ -42,7 +42,7 @@ const POSTS: readonly Blog[] = [
     slug: 'multi-expert-distillation',
     title: 'Multi-expert distillation for robust quadruped locomotion in challenging terrains',
     excerpt:
-      'A standardized skill acquisition framework for scalable simulation based training for wheeled quadrupeds using PPO for navigating complex search-and-rescue environments.',
+      'A standard framework for training wheeled quadrupeds in simulation with PPO, built to scale, so they can learn to get through difficult search-and-rescue sites.',
     markdown: '/uploads/blogs/multi_expert_distillation/multi_expert_distillation.md',
     image: '/uploads/blogs/multi_expert_distillation/thumbnail.webp',
     publishedOn: 'Jul 2026',

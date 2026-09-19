@@ -16,7 +16,7 @@ export const COLLABORATION_ROUTES: readonly CollaborationRoute[] = [
     eyebrow: 'Route 01',
     title: 'University collaborations',
     points: [
-      'TRL 1–3 research to push the frontiers of robotics & AI.',
+      'Early-stage robotics & AI research, at TRL 1–3.',
       'We research, develop and publish jointly.',
       'Currently collaborating with NUS, NTU, UPenn, CMU, CTU.',
     ],
@@ -41,7 +41,7 @@ export const COLLABORATION_ROUTES: readonly CollaborationRoute[] = [
     title: 'Internships & research staff',
     points: [
       'Three-month / six-month internships, supervised by our technical staff.',
-      'Opportunity to convert to a full-time role based on performance.',
+      'Interns who perform well can convert to a full-time role.',
       'Contract / non-contract full-time roles, based in Singapore.',
     ],
     linkLabel: 'Open positions →',

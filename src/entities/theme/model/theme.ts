@@ -99,7 +99,7 @@ const THEME_DETAILS: ReadonlyArray<ThemeDetail> = [
     ],
   },
   {
-    definition: 'Policies that survive contact with real hardware.',
+    definition: 'Policies that still work on real hardware.',
     topics: [
       'VLA policies on real robots',
       'Sim-to-real transfer',
@@ -119,7 +119,7 @@ const THEME_DETAILS: ReadonlyArray<ThemeDetail> = [
     ],
   },
   {
-    definition: 'Different bodies, different sensors, one mission.',
+    definition: 'Robots with different bodies and sensors sharing one mission.',
     topics: [
       'Air-ground teams',
       'Aerial-surface marine teams',
@@ -129,7 +129,7 @@ const THEME_DETAILS: ReadonlyArray<ThemeDetail> = [
     ],
   },
   {
-    definition: 'Everything at once — the only place the mission actually happens.',
+    definition: 'All three at once, which is where real missions happen.',
     topics: [
       'Teams that adapt when the world pushes back',
       'Robust autonomy in degraded environments',

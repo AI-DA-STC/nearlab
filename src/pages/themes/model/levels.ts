@@ -20,20 +20,20 @@ export const LEVELS: readonly Level[] = [
     title: 'The indifferent world',
     quote: 'A door does not care about your policy.',
     description:
-      'Physics does not negotiate. Stuck doors, soft loads, corridors that were never in the map — and failures that stay silent until the plan built on top of them collapses.',
+      'Physics does not negotiate. Stuck doors, soft loads, corridors that were never in the map, and failures that stay silent until the plan built on top of them collapses.',
   },
   {
     index: '02',
     title: 'The degraded world',
     quote: 'No GPS, no comms, no light, no map.',
     description:
-      'Where most robotics research stops, we keep going. Smoke, rubble and dead links are our operating condition, not our edge case — and we hold the hardware and the access to prove it.',
+      'Where most robotics research stops, we keep going. Smoke, rubble and dead links are our operating conditions rather than edge cases, and we have the hardware and the access to prove it.',
   },
   {
     index: '03',
     title: 'The world that pushes back',
     quote: 'An opponent finds the weakness you did not know you had.',
     description:
-      'The agents around you cooperate, compete, or quietly pursue goals of their own. We build teams that hold under active probing, and trust the autonomy precisely because we spent years trying to break it.',
+      'The agents around you cooperate, compete, or quietly pursue goals of their own. We build teams that hold up under active probing, and we trust that autonomy because we have spent years trying to break it.',
   },
 ];

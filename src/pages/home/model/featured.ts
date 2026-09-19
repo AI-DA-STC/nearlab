@@ -26,6 +26,7 @@ export const FEATURED: readonly FeaturedItem[] = [
     image: RL2_VLA.image,
     poster: RL2_VLA.poster,
     mediaCaption: RL2_VLA.figure,
-    mediaAlt: 'RL²-VLA teaser — a robot arm performing a manipulation task in a tabletop cell',
+    mediaAlt:
+      'RL²-VLA adaptive steering: the arm places a screwdriver in a toolbox beside a distractor tape roll, next to its failure-detection plot',
   },
 ];

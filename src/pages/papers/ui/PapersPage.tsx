@@ -6,7 +6,7 @@ import { PaperCard } from './PaperCard';
 import styles from './PapersPage.module.css';
 
 const LEDE =
-  'Peer-reviewed work and preprints, 2024–2026 — filterable by research theme, venue and year.';
+  'Peer-reviewed work and preprints, filterable by research theme and year.';
 
 export function PapersPage() {
   useDocumentMeta({ title: 'Papers', description: LEDE });

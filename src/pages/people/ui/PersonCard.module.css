@@ -70,6 +70,31 @@
   padding: 16px 18px;
 }
 
+/* Name and role heading the hover panel and the touch sheet alike. */
+.aboutHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.aboutName {
+  font-family: var(--nl-font-body);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.3;
+  color: var(--nl-ink-heading);
+}
+
+.aboutRole {
+  margin-top: 3px;
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--nl-ink-faint);
+}
+
 .bio {
   font-family: var(--nl-font-body);
   font-size: 13px;
@@ -179,20 +204,6 @@
   padding: 18px 20px 22px;
 }
 
-.sheetHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  margin-bottom: 12px;
-}
-
-.sheetName {
-  font-family: var(--nl-font-body);
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--nl-ink-heading);
-}
 
 .close {
   padding: 4px 0;
