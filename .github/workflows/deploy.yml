@@ -29,6 +29,11 @@ jobs:
 
       - run: npm ci
 
+      # Quality gate: a type error or an FSD layer violation stops the deploy.
+      - run: npm run typecheck
+
+      - run: npm run lint:fsd
+
       - run: npm run build
 
       - uses: actions/configure-pages@v5

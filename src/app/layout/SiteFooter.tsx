@@ -3,10 +3,10 @@ import { Container, LogoMark } from '@/shared/ui';
 import { CONTACT_EMAIL, NAV_ITEMS } from '@/shared/config';
 import styles from './SiteFooter.module.css';
 
+// Only real destinations: a dead `href="#"` reads as a broken link rather
+// than as an absence. Social profiles are added here once they exist.
 const SOCIAL_LINKS = [
-  { label: 'LinkedIn', href: '#' },
-  { label: 'YouTube', href: '#' },
-  { label: 'GitHub', href: '#' },
+  { label: 'GitHub', href: 'https://github.com/AI-DA-STC' },
   { label: 'Email', href: `mailto:${CONTACT_EMAIL}` },
 ];
 
@@ -20,13 +20,13 @@ export function SiteFooter() {
               <LogoMark tone="inverse" />
               <span className={styles.wordmark}>NEAR LAB</span>
             </div>
-            <p className={styles.blurb}>Next generation AI &amp; Robotics Lab.</p>
+            <p className={styles.blurb}>Next-gen Edge AI and Robotics Lab.</p>
             <p className={styles.blurb}>
               AI.R STC, Group Technology Office
               <br />
               ST Engineering
               <br />
-              600W Camp Road, Singapore
+              Seletar Digital Hub, 600 West Camp Road, Singapore
             </p>
           </div>
 

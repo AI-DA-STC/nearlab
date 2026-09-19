@@ -3,7 +3,7 @@ import { Badge, MediaPlaceholder } from '@/shared/ui';
 import { blogPostPath } from '@/shared/config';
 import { cx } from '@/shared/lib';
 import { themeShortName } from '@/entities/theme';
-import type { Blog } from '@/entities/blog';
+import { blogMetaLine, type Blog } from '@/entities/blog';
 import styles from './BlogCard.module.css';
 
 export function BlogCard({ blog }: { blog: Blog }) {
@@ -21,9 +21,7 @@ export function BlogCard({ blog }: { blog: Blog }) {
         <div className={styles.body}>
           <h3 className={styles.title}>{blog.title}</h3>
           <p className={styles.excerpt}>{blog.excerpt}</p>
-          <p className={styles.meta}>
-            {blog.publishedOn} · {blog.readingTime}
-          </p>
+          <p className={styles.meta}>{blogMetaLine(blog)}</p>
         </div>
       </Link>
     </li>

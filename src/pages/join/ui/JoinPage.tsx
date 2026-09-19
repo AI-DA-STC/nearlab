@@ -1,17 +1,23 @@
 import { Container, PageSection, Reveal, SectionBanner, SectionHeading } from '@/shared/ui';
+import { useDocumentMeta } from '@/shared/lib';
 import { COLLABORATION_ROUTES } from '../model/collaboration';
 import { RouteCard } from './RouteCard';
 import { PartnerTicker } from './PartnerTicker';
 import { OpenPositions } from './OpenPositions';
 import styles from './JoinPage.module.css';
 
+const LEDE =
+  'Three ways in — university collaborations, startup partnerships, and roles inside the lab.';
+
 export function JoinPage() {
+  useDocumentMeta({ title: 'Join', description: LEDE });
+
   return (
     <>
       <SectionBanner
         eyebrow="Collaborate"
         title="Work with us."
-        lede="Three ways in — university collaborations, startup partnerships, and roles inside the lab."
+        lede={LEDE}
         motif="routes"
       />
 

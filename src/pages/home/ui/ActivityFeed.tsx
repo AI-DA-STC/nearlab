@@ -91,7 +91,12 @@ export function ActivityFeed({ kind, onKindChange, expanded, onExpand }: Activit
                 )}
               </div>
               {item.image ? (
-                <img src={item.image} alt={item.thumbnailAlt ?? ''} className={styles.thumb} />
+                <img
+                  src={item.image}
+                  alt={item.thumbnailAlt ?? ''}
+                  className={styles.thumb}
+                  loading="lazy"
+                />
               ) : (
                 item.thumbnailAlt && (
                   <div role="img" aria-label={item.thumbnailAlt} className={styles.thumb} />

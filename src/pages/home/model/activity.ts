@@ -85,7 +85,8 @@ const ENTRIES: readonly ActivityItem[] = [
     authors: RL2_VLA.authors,
     resources: RL2_VLA.resources,
     image: RL2_VLA.poster,
-    thumbnailAlt: 'RL²-VLA teaser — a still from the compositional steering figure',
+    thumbnailAlt:
+      'RL²-VLA adaptive steering — the arm grasping a screwdriver beside a distractor tape roll, with its failure-detection plot',
   },
   {
     kind: 'media',
@@ -106,7 +107,7 @@ const ENTRIES: readonly ActivityItem[] = [
         href: 'https://www.linkedin.com/posts/josephine-teo-ylm_aibilingualism-ai-digitaltransformation-activity-7369557402813198343-OaF9/',
       },
     ],
-    image: '/uploads/media/innotech.png',
+    image: '/uploads/media/innotech.webp',
     thumbnailAlt:
       "William presenting MUMTOS and Physical AI development to Minister Josephine Teo at ST Engineering's InnoTech Conference",
   },
@@ -118,8 +119,26 @@ const ENTRIES: readonly ActivityItem[] = [
     title: 'Robust Physical AI for UAVs and UGVs',
     quote:
       'Members of the NEAR Lab presenting about embodied AI and swarm technologies that enable fleets of robots — from aerial drones to robotic dogs — to operate as one unified team.',
-    image: '/uploads/media/airshow.png',
+    image: '/uploads/media/airshow.webp',
     thumbnailAlt: 'The NEAR Lab stand at the Singapore Airshow, with UAV and UGV platforms on show',
+  },
+  {
+    kind: 'posts',
+    on: '2026-01',
+    badge: 'TALK',
+    source: 'DSSG · Google Developers Space',
+    title: 'Robust Physical AI',
+    quote:
+      'William presenting the Robust Physical AI talk at DSSG, hosted at Google Developers Space Singapore.',
+    resources: [
+      { label: 'Event', href: 'https://luma.com/thdjuruz' },
+      {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/feed/update/urn:li:activity:7420330486691987457/',
+      },
+    ],
+    image: '/uploads/media/dssg.webp',
+    thumbnailAlt: 'William presenting to a full room at Developer Space @ Google Singapore',
   },
   // Last, so that entries sharing a month keep the order written here — a
   // paper ahead of a post published the same month.

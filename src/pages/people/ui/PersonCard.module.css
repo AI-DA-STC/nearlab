@@ -82,6 +82,15 @@
   line-height: 1.4;
 }
 
+/* Rendered only when a person has a bio; a card without one stays compact. */
+.bio {
+  margin-top: 8px;
+  font-family: var(--nl-font-body);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--nl-ink-muted);
+}
+
 @media (max-width: 767px) {
   .topics {
     display: none;
