@@ -7,8 +7,6 @@ export interface CollaborationRoute {
   readonly linkLabel: string;
   /** Either a URL, or `#id` for a heading further down this page. */
   readonly href: string;
-  /** Whether to offer the lab's inbox as a second action. */
-  readonly showEmail: boolean;
 }
 
 export const COLLABORATION_ROUTES: readonly CollaborationRoute[] = [
@@ -22,7 +20,6 @@ export const COLLABORATION_ROUTES: readonly CollaborationRoute[] = [
     ],
     linkLabel: 'How a collaboration starts →',
     href: '#what-we-look-for',
-    showEmail: true,
   },
   {
     eyebrow: 'Route 02',
@@ -34,7 +31,6 @@ export const COLLABORATION_ROUTES: readonly CollaborationRoute[] = [
     ],
     linkLabel: 'What we look for in a partner →',
     href: '#what-we-look-for',
-    showEmail: true,
   },
   {
     eyebrow: 'Route 03',
@@ -46,7 +42,6 @@ export const COLLABORATION_ROUTES: readonly CollaborationRoute[] = [
     ],
     linkLabel: 'Open positions →',
     href: '#open-positions',
-    showEmail: false,
   },
 ];
 
