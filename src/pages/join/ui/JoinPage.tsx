@@ -1,9 +1,11 @@
 import { Container, PageSection, Reveal, SectionBanner, SectionHeading } from '@/shared/ui';
 import { useDocumentMeta } from '@/shared/lib';
 import { COLLABORATION_ROUTES } from '../model/collaboration';
+import { CONTACT_ANCHOR_ID } from '../model/contact';
 import { RouteCard } from './RouteCard';
 import { PartnerTicker } from './PartnerTicker';
 import { OpenPositions } from './OpenPositions';
+import { ContactForm } from './ContactForm';
 import styles from './JoinPage.module.css';
 
 const LEDE =
@@ -59,6 +61,17 @@ export function JoinPage() {
           </div>
         </Container>
       </section>
+
+      <PageSection>
+        <Reveal>
+          <SectionHeading id={CONTACT_ANCHOR_ID}>Get in touch</SectionHeading>
+          <p className={styles.contactLede}>
+            Tell us who you are and what you have in mind. Messages go to the lab team, and we
+            reply by email.
+          </p>
+          <ContactForm />
+        </Reveal>
+      </PageSection>
     </>
   );
 }

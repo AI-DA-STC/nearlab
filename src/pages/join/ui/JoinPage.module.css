@@ -25,6 +25,14 @@
   max-width: 62ch;
 }
 
+.contactLede {
+  margin-top: 12px;
+  max-width: 62ch;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--nl-ink-body);
+}
+
 @media (max-width: 767px) {
   .routes,
   .ethosColumns {
