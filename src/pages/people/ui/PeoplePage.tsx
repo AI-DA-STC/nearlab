@@ -26,7 +26,7 @@ export function PeoplePage() {
       />
 
       <PageSection tight>
-        <Reveal>
+        <Reveal className={styles.group}>
           <RuledHeading>NEAR Lab lead</RuledHeading>
           <ul className={styles.roster}>
             <PersonCard person={LAB_LEAD} />
@@ -34,7 +34,7 @@ export function PeoplePage() {
         </Reveal>
 
         {PEOPLE_GROUPS.map((group, index) => (
-          <Reveal key={group.title} delay={90 + index * 70}>
+          <Reveal key={group.title} delay={90 + index * 70} className={styles.group}>
             <RuledHeading className={styles.groupHeading}>{group.title}</RuledHeading>
             <ul className={styles.roster}>
               {group.people.map((person) => (

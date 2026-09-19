@@ -17,11 +17,11 @@ const DESCRIPTION =
 
 export function ThemesPage() {
   const [region, setRegion] = useState<ThemeId>(DEFAULT_REGION);
-  useDocumentMeta({ title: 'Research themes', description: DESCRIPTION });
+  useDocumentMeta({ title: 'Research Themes', description: DESCRIPTION });
 
   return (
     <>
-      <SectionBanner eyebrow="Research" title="Research themes" motif="mesh" />
+      <SectionBanner eyebrow="Research" title="Research Themes" motif="mesh" />
 
       <PageSection>
         <Reveal>

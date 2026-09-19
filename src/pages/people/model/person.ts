@@ -28,7 +28,7 @@ export interface PersonGroup {
 
 export const LAB_LEAD: Person = {
   name: 'William Teo',
-  role: 'Head, NEAR Lab',
+  role: 'Lead',
   photo: '/uploads/people/william.jpeg',
   bio: 'Studies how teams of robots learn to coordinate — the strategies they form, the skills individual robots acquire, and the conditions under which that coordination holds or breaks — with a broader interest in world-action models and how learned policies stay robust inside a team. PhD researcher at the MARMoT Lab (NUS) supervised by Guillaume Sartoretti; before robotics, a chartered accountant and MIT supply-chain graduate.',
   topics: [],
