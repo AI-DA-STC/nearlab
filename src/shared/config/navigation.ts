@@ -21,7 +21,7 @@ export interface NavItem {
 
 /** Primary navigation, rendered by both the site header and the footer. */
 export const NAV_ITEMS: readonly NavItem[] = [
-  { label: 'Research themes', to: ROUTES.themes },
+  { label: 'Research Themes', to: ROUTES.themes },
   { label: 'Papers', to: ROUTES.papers },
   { label: 'Blogs', to: ROUTES.blogs },
   { label: 'People', to: ROUTES.people },
