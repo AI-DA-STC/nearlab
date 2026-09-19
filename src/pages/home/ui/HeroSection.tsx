@@ -39,9 +39,9 @@ export function HeroSection() {
           Different robots. Difficult worlds. Adaptive teams.
         </Reveal>
         <Reveal as="p" delay={140} className={styles.lede}>
-          Building a future where diverse robots and humans form capable teams on demand:
-          discovering how to work together, interacting intelligently with the physical world, and
-          adapting when environments or other agents behave against their expectations.
+          We are working toward teams of different robots and people that come together on demand.
+          Those teams have to work out how to cooperate, handle the physical world intelligently, and
+          adapt when the environment or other agents stop behaving the way they expected.
         </Reveal>
       </Container>
     </section>

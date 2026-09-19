@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 const SITE_NAME = 'NEAR Lab';
 const SITE_TITLE = 'NEAR Lab — Next-gen Edge AI and Robotics Lab';
 const SITE_DESCRIPTION =
-  'NEAR Lab builds a future where diverse robots and humans form capable teams on demand.';
+  'NEAR Lab works toward teams of different robots and people that come together on demand.';
 
 export interface DocumentMeta {
   /** The page's own name; omitted on the home page, which uses the site title. */

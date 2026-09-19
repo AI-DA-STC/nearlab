@@ -95,7 +95,7 @@ const ENTRIES: readonly ActivityItem[] = [
     source: 'ST Engineering InnoTech',
     title: 'ST Engineering investing S$250m in five-year programme on physical AI research',
     quote:
-      "William (NEAR Lab team lead, second from right) presenting to the Minister for Digital Development and Information Josephine Teo (first from right), MUMTOS and Physical AI development at ST Engineering's InnoTech Conference on Sep 4.",
+      "William (NEAR Lab lead, second from right) presenting MUMTOS and the lab's Physical AI work to Josephine Teo, Minister for Digital Development and Information (first from right), at ST Engineering's InnoTech Conference on 4 Sep.",
     resources: [
       { label: 'CNA', href: 'https://www.youtube.com/watch?v=u_x1grGOOJw' },
       {
@@ -118,7 +118,7 @@ const ENTRIES: readonly ActivityItem[] = [
     source: 'Singapore Airshow',
     title: 'Robust Physical AI for UAVs and UGVs',
     quote:
-      'Members of the NEAR Lab presenting about embodied AI and swarm technologies that enable fleets of robots — from aerial drones to robotic dogs — to operate as one unified team.',
+      'NEAR Lab members presenting the embodied AI and swarm technologies that let fleets of robots, from aerial drones to robot dogs, operate as one team.',
     image: '/uploads/media/airshow.webp',
     thumbnailAlt: 'The NEAR Lab stand at the Singapore Airshow, with UAV and UGV platforms on show',
   },

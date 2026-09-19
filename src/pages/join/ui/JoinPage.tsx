@@ -7,7 +7,7 @@ import { OpenPositions } from './OpenPositions';
 import styles from './JoinPage.module.css';
 
 const LEDE =
-  'Three ways in — university collaborations, startup partnerships, and roles inside the lab.';
+  'Three ways in: university collaborations, startup partnerships, and roles inside the lab.';
 
 export function JoinPage() {
   useDocumentMeta({ title: 'Join', description: LEDE });
@@ -45,16 +45,16 @@ export function JoinPage() {
             <p className={styles.ethosText}>
               People who enjoy the part where it stops working. Every robotics video you have seen
               works; every robot you have fielded eventually doesn&apos;t. We want the person who
-              watches the demo freeze in a smoke-filled stairwell and leans in rather than cuts the
-              clip — the one who is genuinely curious about the soft object, the stuck door, the
-              dropped link, the map that turned out to be wrong.
+              watches the demo freeze in a smoke-filled stairwell and leans in instead of cutting the
+              clip, curious about the soft object, the stuck door, the dropped link, the map that
+              turned out to be wrong.
             </p>
             <p className={styles.ethosText}>
-              Titles matter less to us than evidence. Show us something you finished — a thesis
-              chapter, an open-source release, a build that survived contact with a real corridor —
-              and the temperament for teamwork, because here your teammates are robots and humans
-              who may cooperate, compete, or quietly pursue goals of their own. If &ldquo;the world
-              pushed back and we adapted&rdquo; sounds like a good week, you will fit.
+              Titles matter less to us than evidence. Show us something you finished (a thesis
+              chapter, an open-source release, a build that made it down a real corridor) and the
+              temperament for teamwork. Your teammates here are robots as well as people, and they
+              will not always want what you want. If &ldquo;the world pushed back and we
+              adapted&rdquo; sounds like a good week, you will fit.
             </p>
           </div>
         </Container>
