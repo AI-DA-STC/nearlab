@@ -30,6 +30,16 @@ function placePopover(card: HTMLElement): PopoverPlacement {
   };
 }
 
+/** Who the panel is about, so it reads on its own when it covers the tile. */
+function AboutHeading({ person }: { person: Person }) {
+  return (
+    <div>
+      <div className={styles.aboutName}>{person.name}</div>
+      <div className={styles.aboutRole}>{person.role}</div>
+    </div>
+  );
+}
+
 function AboutContent({ person }: { person: Person }) {
   return (
     <>
@@ -56,6 +66,9 @@ function AboutPopover({ person, placement }: { person: Person; placement: Popove
       style={width}
     >
       <div className={styles.panel}>
+        <div className={styles.aboutHeader}>
+          <AboutHeading person={person} />
+        </div>
         <AboutContent person={person} />
       </div>
     </div>
@@ -80,8 +93,8 @@ function AboutSheet({ person, id, onClose }: { person: Person; id: string; onClo
         className={cx(styles.sheet, 'nl-fade-up-fast')}
         onKeyDown={(event) => event.key === 'Escape' && onClose()}
       >
-        <div className={styles.sheetHeader}>
-          <span className={styles.sheetName}>{person.name}</span>
+        <div className={styles.aboutHeader}>
+          <AboutHeading person={person} />
           <button ref={closeRef} type="button" className={styles.close} onClick={onClose}>
             Close
           </button>
