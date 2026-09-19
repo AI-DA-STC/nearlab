@@ -1,3 +1,8 @@
+/* Anchors the About panel, which opens beside the tile rather than in it. */
+.item {
+  position: relative;
+}
+
 .card {
   color: var(--nl-ink-heading);
 }
@@ -9,6 +14,7 @@
   border: 1px solid var(--nl-border);
   border-radius: var(--nl-radius);
   overflow: hidden;
+  transition: border-color var(--nl-dur-fast) ease-out;
 }
 
 .photo {
@@ -17,39 +23,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* "Works on" panel, revealed on hover; the topic line below stands in for it
-   on touch viewports where hover never fires. */
-.topics {
-  position: absolute;
-  inset: 0;
-  background: rgba(26, 62, 98, 0.94);
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  opacity: 0;
-  transition: opacity var(--nl-dur-fast) ease-out;
-}
-
-.card:hover .topics,
-.card:focus-within .topics {
-  opacity: 1;
-}
-
-.topicsLabel {
-  font-family: var(--nl-font-mono);
-  font-weight: 400;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  color: var(--nl-ink-inverse-muted);
-}
-
-.topic {
-  font-size: 12px;
-  line-height: 1.4;
-  color: var(--nl-ink-inverse);
 }
 
 .details {
@@ -72,31 +45,175 @@
   color: var(--nl-ink-faint);
 }
 
-.topicLine {
+/* Touch screens only; with a pointer the panel opens on hover instead. */
+.toggle {
   display: none;
-  margin-top: 4px;
+  margin-top: 8px;
+  padding: 0;
+  background: none;
+  border: 0;
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--nl-link);
+  cursor: pointer;
+}
+
+.popover {
+  display: none;
+}
+
+.panel {
+  background: var(--nl-bg);
+  border: 1px solid var(--nl-border);
+  border-radius: var(--nl-radius);
+  padding: 16px 18px;
+}
+
+.bio {
+  font-family: var(--nl-font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--nl-ink-body);
+}
+
+.topics {
+  font-family: var(--nl-font-body);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--nl-ink-muted);
+}
+
+.bio + .topics {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--nl-border);
+}
+
+.topicsLabel {
+  display: block;
+  margin-bottom: 4px;
   font-family: var(--nl-font-mono);
   font-weight: 400;
   font-size: 10px;
-  color: var(--nl-ink-muted);
-  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nl-ink-faint);
 }
 
-/* Rendered only when a person has a bio; a card without one stays compact. */
-.bio {
-  margin-top: 8px;
-  font-family: var(--nl-font-body);
-  font-size: 13px;
-  line-height: 1.55;
-  color: var(--nl-ink-muted);
-}
-
-@media (max-width: 767px) {
-  .topics {
-    display: none;
+/* With a pointer: the panel floats beside the tile, over its neighbours. The
+   transparent padding bridges the gap, so the pointer can cross into the panel
+   without it closing. The short delay keeps a sweep across the grid from
+   flashing every panel on the way. */
+@media (hover: hover) {
+  .popover {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 20;
+    width: calc(var(--popover-width) + 12px);
+    padding-left: 12px;
+    opacity: 0;
+    transition:
+      opacity var(--nl-dur-fast) ease-out,
+      display var(--nl-dur-fast) allow-discrete;
   }
 
-  .topicLine {
+  .popoverLeft {
+    left: auto;
+    right: 100%;
+    padding-left: 0;
+    padding-right: 12px;
+  }
+
+  .panel {
+    box-shadow: 0 10px 28px rgba(14, 36, 56, 0.14);
+  }
+
+  .hasAbout:hover .popover,
+  .hasAbout:focus-within .popover {
     display: block;
+    opacity: 1;
+    transition-delay: 120ms;
   }
+
+  @starting-style {
+    .hasAbout:hover .popover,
+    .hasAbout:focus-within .popover {
+      opacity: 0;
+    }
+  }
+
+  .hasAbout:hover .portrait,
+  .hasAbout:focus-within .portrait {
+    border-color: var(--nl-border-strong);
+  }
+}
+
+/* Touch screens: the About button stands in for hover. */
+@media (hover: none) {
+  .toggle {
+    display: inline-block;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(14, 36, 56, 0.36);
+}
+
+.sheet {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 71;
+  max-height: 72vh;
+  overflow-y: auto;
+  background: var(--nl-bg);
+  border: 1px solid var(--nl-border);
+  border-radius: var(--nl-radius);
+  box-shadow: 0 -4px 28px rgba(14, 36, 56, 0.18);
+  padding: 18px 20px 22px;
+}
+
+.sheetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.sheetName {
+  font-family: var(--nl-font-body);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--nl-ink-heading);
+}
+
+.close {
+  padding: 4px 0;
+  background: none;
+  border: 0;
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--nl-link);
+  cursor: pointer;
+}
+
+/* The details as text for screen readers; the popover and sheet are visual. */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }

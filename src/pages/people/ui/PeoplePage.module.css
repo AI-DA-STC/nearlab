@@ -2,6 +2,18 @@
   margin-top: 72px;
 }
 
+/* Each section's entrance animation leaves it a stacking context, so a card's
+   About panel would slide under the next section. The section being hovered
+   rises above its siblings instead. */
+.group {
+  position: relative;
+}
+
+.group:hover,
+.group:focus-within {
+  z-index: 1;
+}
+
 .roster {
   margin-top: 28px;
   display: grid;
