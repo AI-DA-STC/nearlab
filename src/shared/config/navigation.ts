@@ -6,7 +6,7 @@ export const ROUTES = {
   papers: '/papers',
   blogs: '/blogs',
   people: '/people',
-  join: '/join',
+  contact: '/contact',
 } as const;
 
 /** A single post's path. The listing links to it, the router matches it. */
@@ -25,5 +25,5 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { label: 'Papers', to: ROUTES.papers },
   { label: 'Blogs', to: ROUTES.blogs },
   { label: 'People', to: ROUTES.people },
-  { label: 'Join', to: ROUTES.join },
+  { label: 'Contact', to: ROUTES.contact },
 ];

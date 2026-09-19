@@ -12,7 +12,7 @@ const LEDE =
   'Three ways in: university collaborations, startup partnerships, and roles inside the lab.';
 
 export function JoinPage() {
-  useDocumentMeta({ title: 'Join', description: LEDE });
+  useDocumentMeta({ title: 'Contact', description: LEDE });
 
   return (
     <>

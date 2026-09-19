@@ -1,4 +1,4 @@
-import { createHashRouter } from 'react-router-dom';
+import { Navigate, createHashRouter } from 'react-router-dom';
 import { SiteLayout } from './layout';
 import { ROUTES } from '@/shared/config';
 import { HomePage } from '@/pages/home';
@@ -22,7 +22,9 @@ export const router = createHashRouter([
       { path: 'blogs', element: <BlogsPage /> },
       { path: 'blogs/:slug', element: <BlogPostPage /> },
       { path: 'people', element: <PeoplePage /> },
-      { path: 'join', element: <JoinPage /> },
+      { path: 'contact', element: <JoinPage /> },
+      // The page's address before it was renamed; links to it still land.
+      { path: 'join', element: <Navigate to={ROUTES.contact} replace /> },
     ],
   },
 ]);
