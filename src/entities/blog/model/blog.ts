@@ -42,33 +42,33 @@ const POSTS: readonly Blog[] = [
     slug: 'multi-expert-distillation',
     title: 'Multi-expert distillation for robust quadruped locomotion in challenging terrains',
     excerpt:
-      'A standard framework for training wheeled quadrupeds in simulation with PPO, built to scale, so they can learn to get through difficult search-and-rescue sites.',
+      'A standard framework for training wheeled quadrupeds in simulation with PPO. It is built to scale, and the aim is robots that can get through difficult search-and-rescue sites.',
     markdown: '/uploads/blogs/multi_expert_distillation/multi_expert_distillation.md',
     image: '/uploads/blogs/multi_expert_distillation/thumbnail.webp',
     publishedOn: 'Jul 2026',
     publishedAt: '2026-07',
     year: '2026',
     themeId: 3,
-    figure: 'terrain curriculum — the five expert policies',
+    figure: 'the five expert policies of the terrain curriculum',
   },
   {
     slug: 'vla-cobot-magic',
     title: 'Deploying test-time adaptable VLA policies on the AgileX Cobot Magic (split type)',
     excerpt:
-      'A ROS1 bridge and policy router for running openpi VLA policies (without finetuning) on the AgileX Cobot Magic for table-top single-arm manipulation.',
+      'A ROS1 bridge and policy router that runs openpi VLA policies on the AgileX Cobot Magic without finetuning, for single-arm manipulation on a table top.',
     markdown: '/uploads/blogs/vla_cobot_magic/vla_cobot_magic.md',
     image: '/uploads/blogs/vla_cobot_magic/thumbnail.webp',
     publishedOn: 'Jun 2026',
     publishedAt: '2026-06',
     year: '2026',
     themeId: 3,
-    figure: 'the bridge — ROS1 topics to openpi observations',
+    figure: 'ROS1 topics bridged into openpi observations',
   },
   {
     slug: 'waypoint-navigation-m20',
     title: 'Sparse Graphs, Dense Maps: Autonomous Waypoint Navigation on the Deep Robotics M20',
     excerpt:
-      "Nav2's global planner re-searches the whole costmap on every replan, and the routes it finds ignore the structure of the building. Precomputing a sparse waypoint graph from the GLIM map with SWAGGER moves that decision offline, leaving the behaviour tree to sequence short local hops and recover when one fails.",
+      "Nav2's global planner re-searches the whole costmap on every replan, and the routes it finds ignore the structure of the building. Precomputing a sparse waypoint graph from the GLIM map with SWAGGER moves routing offline. That leaves the behaviour tree to sequence short local hops and recover when one fails.",
     markdown: '/uploads/blogs/waypoint_navigation_m20/waypoint_navigation_m20.md',
     image: '/uploads/blogs/waypoint_navigation_m20/thumbnail.gif',
     publishedOn: 'Ongoing',
@@ -87,7 +87,7 @@ const POSTS: readonly Blog[] = [
     publishedAt: '2026-07',
     year: '2026',
     themeId: 1,
-    figure: 'visibility graph — polygons extracted mid-drive',
+    figure: 'visibility-graph polygons extracted mid-drive',
   },
 ];
 
