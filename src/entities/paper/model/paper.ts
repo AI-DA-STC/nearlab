@@ -48,4 +48,49 @@ export const RL2_VLA: Paper = {
   ],
 };
 
-export const PAPERS: readonly Paper[] = [RL2_VLA];
+export const SEMANTIC_PREDICTIVE_MAPPING: Paper = {
+  title: 'Semantic-Aware Predictive Mapping for Exploration and Navigation',
+  venue: 'TENCON 2026',
+  year: '2026',
+  publishedOn: 'Oct 2026',
+  publishedAt: '2026-10',
+  themeId: 3,
+  image: '/uploads/papers/kenneth_tenconn.webp',
+  figure: 'map prediction with and without semantic door cues',
+  resources: [
+    {
+      label: 'website',
+      href: 'https://ai-da-stc.github.io/semantic-aware-predictive-mapping-tencon/',
+    },
+    { label: 'paper', href: 'https://arxiv.org/abs/2610.10382' },
+    {
+      label: 'code',
+      href: 'https://github.com/AI-DA-STC/semantic-aware-predictive-mapping-tencon',
+    },
+  ],
+};
+
+export const PAIRWISE_REGRET: Paper = {
+  title: 'Pairwise Approximation Can Select the Wrong Multi-Robot Plan',
+  venue: 'IROS 2026 Workshop on Intelligent Information Gathering',
+  year: '2026',
+  publishedOn: 'Sep 2026',
+  publishedAt: '2026-09',
+  themeId: 2,
+  image: '/uploads/papers/william_iros26.mp4',
+  poster: '/uploads/papers/william_iros26-poster.jpg',
+  figure: 'the plans picked by F and F₂, explored side by side',
+  resources: [
+    { label: 'website', href: 'https://www.william-teo.com/pairwise-regret/' },
+    { label: 'paper', href: 'https://arxiv.org/abs/2609.29929' },
+    { label: 'code', href: 'https://github.com/williamteo/pairwise-regret' },
+  ],
+};
+
+/** Newest first, so a paper can be added anywhere in the list. ISO dates
+ *  compare correctly as text. */
+export const PAPERS: readonly Paper[] = [
+  RL2_VLA,
+  SEMANTIC_PREDICTIVE_MAPPING,
+  PAIRWISE_REGRET,
+].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));

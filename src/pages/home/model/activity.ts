@@ -1,4 +1,4 @@
-import { RL2_VLA } from '@/entities/paper';
+import { PAIRWISE_REGRET, RL2_VLA, SEMANTIC_PREDICTIVE_MAPPING } from '@/entities/paper';
 import { BLOGS } from '@/entities/blog';
 import { themeShortName } from '@/entities/theme';
 import { blogPostPath } from '@/shared/config';
@@ -87,6 +87,30 @@ const ENTRIES: readonly ActivityItem[] = [
     image: RL2_VLA.poster,
     thumbnailAlt:
       'RL²-VLA adaptive steering — the arm grasping a screwdriver beside a distractor tape roll, with its failure-detection plot',
+  },
+  {
+    kind: 'papers',
+    on: SEMANTIC_PREDICTIVE_MAPPING.publishedAt,
+    badge: 'PAPER',
+    source: SEMANTIC_PREDICTIVE_MAPPING.venue,
+    title: SEMANTIC_PREDICTIVE_MAPPING.title,
+    authors: SEMANTIC_PREDICTIVE_MAPPING.authors,
+    resources: SEMANTIC_PREDICTIVE_MAPPING.resources,
+    image: SEMANTIC_PREDICTIVE_MAPPING.image,
+    thumbnailAlt:
+      'Map prediction at a corridor door: the room behind it is missed from geometry alone and predicted with semantic door cues',
+  },
+  {
+    kind: 'papers',
+    on: PAIRWISE_REGRET.publishedAt,
+    badge: 'PAPER',
+    source: PAIRWISE_REGRET.venue,
+    title: PAIRWISE_REGRET.title,
+    authors: PAIRWISE_REGRET.authors,
+    resources: PAIRWISE_REGRET.resources,
+    image: PAIRWISE_REGRET.poster,
+    thumbnailAlt:
+      'The plans picked by F and F₂, explored side by side by four robots on an office floor plan',
   },
   {
     kind: 'media',

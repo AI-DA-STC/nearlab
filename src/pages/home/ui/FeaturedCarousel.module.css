@@ -13,9 +13,11 @@
   flex: none;
 }
 
+/* Fractions of what the gap leaves: 58% + 42% plus the gap overflowed the
+   slide, and the viewport clipped the end of every line of copy. */
 .split {
   display: grid;
-  grid-template-columns: 58% 42%;
+  grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
   gap: 48px;
   align-items: center;
 }

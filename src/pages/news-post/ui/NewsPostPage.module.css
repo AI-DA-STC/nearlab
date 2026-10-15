@@ -1,0 +1,59 @@
+/* The masthead repeats the blog post's, so a news item reads as part of the
+   same family. */
+.masthead {
+  padding-top: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--nl-border);
+}
+
+.back {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--nl-ink-faint);
+}
+
+.back:hover {
+  color: var(--nl-link-hover);
+}
+
+.eyebrow {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin-top: 14px;
+  max-width: 24ch;
+  font-family: var(--nl-font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--nl-ink-heading);
+}
+
+/* The write-up is the item's whole text, so it reads as body copy rather than
+   as the muted standfirst over a post. */
+.description {
+  margin-top: 16px;
+  max-width: 68ch;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--nl-ink-body);
+}
+
+.links {
+  margin-top: 18px;
+}
+
+.note {
+  margin-top: 16px;
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--nl-ink-muted);
+}

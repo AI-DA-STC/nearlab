@@ -14,6 +14,12 @@ export function blogPostPath(slug: string): string {
   return `${ROUTES.blogs}/${slug}`;
 }
 
+/** A news item's page. The home page's Latest rail links to it, the router
+ *  matches it. There is no news index; the rail is the listing. */
+export function newsPostPath(slug: string): string {
+  return `/news/${slug}`;
+}
+
 export interface NavItem {
   readonly label: string;
   readonly to: string;

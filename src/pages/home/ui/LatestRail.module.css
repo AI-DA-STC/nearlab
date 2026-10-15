@@ -65,8 +65,7 @@
   color: var(--nl-ink-heading);
 }
 
-/* Only a linked item reacts; an item without a source is plain text. */
-a.text:hover {
+.text:hover {
   color: var(--nl-navy);
 }
 

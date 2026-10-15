@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { PageSection, Reveal, SectionHeading } from '@/shared/ui';
 import { cx, useDocumentMeta } from '@/shared/lib';
 import { isActivityKind, type ActivityKind } from '../model/activity';
-import { NEWS } from '../model/news';
+import { NEWS } from '@/entities/news-item';
 import { HeroSection } from './HeroSection';
 import { FeaturedCarousel } from './FeaturedCarousel';
 import { ActivityFeed } from './ActivityFeed';

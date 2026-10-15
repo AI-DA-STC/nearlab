@@ -24,12 +24,13 @@ src/
 
   pages/                   One slice per route; each owns its own logic
     home/    ui/ HeroSection · FeaturedCarousel · ActivityFeed · LatestRail
-             model/ featured.ts · activity.ts · news.ts
+             model/ featured.ts · activity.ts
     themes/  ui/ ThemesPage · QuestionBand · PillarVenn · VennPanel · IndustryCard
              ui/ industry-art · pillar-icons
              model/ levels.ts · industries.ts
     papers/  ui/ PapersPage · PaperCard
     blogs/   ui/ BlogsPage · BlogCard
+    news-post/ ui/ NewsPostPage · NewsGallery
     people/  ui/ PeoplePage · PersonCard · PersonLinks · profile-icons
              model/ person.ts
     join/    ui/ JoinPage · RouteCard · PartnerTicker · OpenPositions
@@ -42,6 +43,7 @@ src/
     theme/                   the 7-region taxonomy (a 3-pillar Venn) + short labels
     paper/                   papers dataset
     blog/                    blogs dataset
+    news-item/               news items: the home page's Latest rail and their pages
 
   shared/                  Infrastructure, no business logic
     ui/                      Container · PageSection · headings · Badge · ChipRow

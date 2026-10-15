@@ -1,23 +1,15 @@
 import { useId, type MouseEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { Reveal } from '@/shared/ui';
+import { newsPostPath } from '@/shared/config';
 import { scrollToAnchor } from '@/shared/lib';
+import { NEWS, isRecentNews } from '@/entities/news-item';
 import { formatActivityDate } from '../model/activity';
-import { NEWS, isRecentNews, type NewsItem } from '../model/news';
 import styles from './LatestRail.module.css';
 
 /** Where "All updates" lands: the full activity feed on this page. */
 export const ACTIVITY_ANCHOR_ID = 'lab-activity';
 const ACTIVITY_ANCHOR = `#${ACTIVITY_ANCHOR_ID}`;
-
-function NewsText({ item }: { item: NewsItem }) {
-  if (!item.href) return <span className={styles.text}>{item.text}</span>;
-
-  return (
-    <a href={item.href} target="_blank" rel="noopener noreferrer" className={styles.text}>
-      {item.text}
-    </a>
-  );
-}
 
 export function LatestRail() {
   const headingId = useId();
@@ -38,7 +30,7 @@ export function LatestRail() {
         </h2>
         <ul className={styles.list}>
           {NEWS.map((item) => (
-            <li key={item.text} className={styles.item}>
+            <li key={item.slug} className={styles.item}>
               <div className={styles.meta}>
                 <span className={styles.date}>{formatActivityDate(item.on)}</span>
                 {isRecentNews(item) && (
@@ -48,7 +40,10 @@ export function LatestRail() {
                   </span>
                 )}
               </div>
-              <NewsText item={item} />
+              {/* Each item opens its own page: the write-up and its photos. */}
+              <Link to={newsPostPath(item.slug)} className={styles.text}>
+                {item.title}
+              </Link>
             </li>
           ))}
         </ul>

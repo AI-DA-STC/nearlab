@@ -6,6 +6,7 @@ import { ThemesPage } from '@/pages/themes';
 import { PapersPage } from '@/pages/papers';
 import { BlogsPage } from '@/pages/blogs';
 import { BlogPostPage } from '@/pages/blog-post';
+import { NewsPostPage } from '@/pages/news-post';
 import { PeoplePage } from '@/pages/people';
 import { JoinPage } from '@/pages/join';
 
@@ -21,6 +22,7 @@ export const router = createHashRouter([
       { path: 'papers', element: <PapersPage /> },
       { path: 'blogs', element: <BlogsPage /> },
       { path: 'blogs/:slug', element: <BlogPostPage /> },
+      { path: 'news/:slug', element: <NewsPostPage /> },
       { path: 'people', element: <PeoplePage /> },
       { path: 'contact', element: <JoinPage /> },
       // The page's address before it was renamed; links to it still land.

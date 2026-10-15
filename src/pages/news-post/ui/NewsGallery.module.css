@@ -1,0 +1,143 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* A row's photos grow in proportion to their aspect ratios, so they come out
+   the same height and uncropped. The cap keeps a lone photo, or a row of tall
+   ones, from being blown up past a comfortable height. */
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: calc(var(--row-ratio) * 560px + (var(--row-count) - 1) * 12px);
+}
+
+.tile {
+  flex: var(--ratio) 1 0;
+  min-width: 0;
+  aspect-ratio: var(--ratio);
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  background: var(--nl-bg-tint);
+  border: 1px solid var(--nl-border);
+  border-radius: var(--nl-radius);
+  cursor: zoom-in;
+  transition: border-color var(--nl-dur-fast) ease-out;
+}
+
+.tile:hover {
+  border-color: var(--nl-border-strong);
+}
+
+.tile:focus-visible {
+  outline: 2px solid var(--nl-link);
+  outline-offset: 3px;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-out;
+}
+
+.tile:hover .photo {
+  transform: scale(1.02);
+}
+
+/* Phones: one photo per line, each at its own shape. */
+@media (max-width: 639px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: none;
+  }
+
+  .tile {
+    flex: none;
+  }
+}
+
+/* ---- Viewer -------------------------------------------------------------- */
+
+.viewer {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 24px;
+  border: 0;
+  background: transparent;
+  color: var(--nl-ink-inverse);
+}
+
+/* Laid out only while open: a closed dialog has to stay hidden. */
+.viewer[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.viewer::backdrop {
+  background: rgba(14, 36, 56, 0.92);
+}
+
+.stage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.full {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--nl-radius);
+}
+
+.controls {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 24px;
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.count {
+  color: var(--nl-ink-inverse-muted);
+}
+
+.control {
+  padding: 6px 2px;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: var(--nl-ink-inverse);
+  cursor: pointer;
+}
+
+.control:hover {
+  text-decoration: underline;
+}
+
+.control:focus-visible {
+  outline: 2px solid var(--nl-ink-inverse);
+  outline-offset: 3px;
+}
+
+/* The page behind stays put while a photo is open. */
+:global(html):has(.viewer[open]) {
+  overflow: hidden;
+}

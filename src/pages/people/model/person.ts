@@ -115,6 +115,23 @@ const STAFF: readonly Person[] = [
       linkedin: 'https://www.linkedin.com/in/sean-fong-b8269543/',
     },
   },
+  {
+    name: 'Shay',
+    role: 'Principal AI Engineer',
+    photo: '/uploads/people/shay.webp',
+    topics: [
+      'Loco-manipulation',
+      'Whole-body control',
+      'Reinforcement learning',
+      'Contact-rich manipulation',
+      'Sim-to-real deployment',
+      'Legged robotic systems',
+    ],
+    links: {
+      scholar: 'https://scholar.google.com/citations?user=OWTd70QAAAAJ&hl=en',
+      linkedin: 'https://www.linkedin.com/in/hsieh-yu-li/',
+    },
+  },
 ];
 
 const CURRENT_INTERNS: readonly Person[] = [
@@ -126,6 +143,47 @@ const CURRENT_INTERNS: readonly Person[] = [
     links: {
       website: 'https://sites.google.com/view/nerissa-kho/home',
       linkedin: 'https://sg.linkedin.com/in/nerissa-kho-7ba5b4224',
+    },
+  },
+  {
+    name: 'Li Yun',
+    role: 'Robotics Intern · SUTD',
+    photo: '/uploads/people/li-yun.webp',
+    topics: ['Perception & planning for robotic manipulation'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/saw-li-yun-ba00672b9/',
+    },
+  },
+  {
+    name: 'Joseph',
+    role: 'Robotics Intern · SUTD',
+    photo: '/uploads/people/joseph.webp',
+    topics: ['Command & control', 'Heterogeneous multi-robot fleet management & operations'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/joseph-leong-96bb16211/',
+    },
+  },
+  {
+    name: 'Lo Khye He',
+    role: 'Robotics Intern · SUTD',
+    photo: '/uploads/people/lo-khye-he.webp',
+    topics: ['Embedded software development'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/khyehe/',
+    },
+  },
+  {
+    name: 'Shafeeq',
+    role: 'Robotics Intern · Republic Polytechnic',
+    topics: ['3D CAD simulation', 'Dexterous arm fabrication', 'Drone operations'],
+  },
+  {
+    name: 'Nathan',
+    role: 'Robotics Intern · SUTD',
+    photo: '/uploads/people/nathan.webp',
+    topics: ['Multi-robot drone swarms'],
+    links: {
+      linkedin: 'https://www.linkedin.com/in/nathan-ly-7a1b52150/',
     },
   },
 ];
