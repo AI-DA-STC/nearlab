@@ -196,12 +196,20 @@ export const PEOPLE_GROUPS: readonly PersonGroup[] = [
 export interface Alumnus {
   readonly name: string;
   readonly role: string;
-  readonly href: string;
+  /** Slug of their testimonial under `public/uploads/testimonials/`. */
+  readonly testimonial?: string;
+  /** Slug of the blog post about the project they worked on. */
+  readonly project?: string;
 }
 
 export const ALUMNI: readonly Alumnus[] = [
-  { name: 'Vetrivel Karthikeyan', role: 'Intern · NUS, 2026', href: '#' },
-  { name: 'Kaung Myat Min', role: 'Intern · Republic Polytechnic, 2026', href: '#' },
-  { name: 'Aqeel', role: 'Intern · Republic Polytechnic, 2026', href: '#' },
-  { name: 'Wing Ho', role: 'Intern · NUS, 2026', href: '#' },
+  {
+    name: 'Vetrivel Karthikeyan',
+    role: 'Intern · NUS, 2026',
+    testimonial: 'vetrivel-karthikeyan',
+    project: 'multi-expert-distillation',
+  },
+  { name: 'Kaung Myat Min', role: 'Intern · Republic Polytechnic, 2026' },
+  { name: 'Aqeel', role: 'Intern · Republic Polytechnic, 2026' },
+  { name: 'Wing Ho', role: 'Intern · NUS, 2026' },
 ];

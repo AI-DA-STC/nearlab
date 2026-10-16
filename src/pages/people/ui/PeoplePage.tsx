@@ -1,4 +1,6 @@
 import { PageSection, Reveal, RuledHeading, SectionBanner } from '@/shared/ui';
+import { Link } from 'react-router-dom';
+import { blogPostPath, testimonialPath } from '@/shared/config';
 import { useDocumentMeta } from '@/shared/lib';
 import { ALUMNI, LAB_LEAD, PEOPLE_GROUPS } from '../model/person';
 import { PersonCard } from './PersonCard';
@@ -48,13 +50,23 @@ export function PeoplePage() {
           <RuledHeading className={styles.groupHeading}>Previous interns</RuledHeading>
           <ul className={styles.alumni}>
             {ALUMNI.map((alumnus) => (
-              <li key={alumnus.name}>
-                <a href={alumnus.href} className={styles.alumnusLink}>
-                  <span>
-                    <span className={styles.alumnusName}>{alumnus.name}</span>
-                    <span className={styles.alumnusRole}>{alumnus.role}</span>
-                  </span>
-                </a>
+              <li key={alumnus.name} className={styles.alumnus}>
+                <span>
+                  <span className={styles.alumnusName}>{alumnus.name}</span>
+                  <span className={styles.alumnusRole}>{alumnus.role}</span>
+                </span>
+                <span className={styles.alumnusLinks}>
+                  {alumnus.testimonial && (
+                    <Link to={testimonialPath(alumnus.testimonial)} className={styles.alumnusLink}>
+                      Testimonial
+                    </Link>
+                  )}
+                  {alumnus.project && (
+                    <Link to={blogPostPath(alumnus.project)} className={styles.alumnusLink}>
+                      Project
+                    </Link>
+                  )}
+                </span>
               </li>
             ))}
           </ul>

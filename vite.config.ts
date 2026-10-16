@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { fileURLToPath } from 'node:url';
+import { newsImages } from './vite/newsImages';
 
 const src = (p: string) => fileURLToPath(new URL(`./src/${p}`, import.meta.url));
 
 // Aliases mirror tsconfig.json so the Vite resolver and TypeScript agree.
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), newsImages()],
   resolve: {
     alias: {
       '@/app': src('app'),

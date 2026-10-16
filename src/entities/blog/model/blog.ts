@@ -39,6 +39,18 @@ export interface Blog {
 
 const POSTS: readonly Blog[] = [
   {
+    slug: 'multi-robot-coordinated-search',
+    title: 'Multi-robot coordinated search and discovery',
+    excerpt:
+      'A multi-robot coordinated search demo that serves as a rapid response to an unattended item report in an airport terminal. An operator gives a single high-level command (“search around check-in row C”). The multi-robot team splits up the area, searches cooperatively, and locates the item. A robot then opens and inspects it, and staff review the findings and make the final call. This facilitates a faster, safer first response, with robots handling search and inspection and humans staying in control of decisions.',
+    markdown: '/uploads/blogs/multi_robot_coordinated_search/multi_robot_coordinated_search.md',
+    publishedOn: 'Oct 2026',
+    publishedAt: '2026-10',
+    year: '2026',
+    themeId: 2,
+    figure: 'the team splitting up check-in row C to search',
+  },
+  {
     slug: 'multi-expert-distillation',
     title: 'Multi-expert distillation for robust quadruped locomotion in challenging terrains',
     excerpt:
@@ -50,19 +62,6 @@ const POSTS: readonly Blog[] = [
     year: '2026',
     themeId: 3,
     figure: 'the five expert policies of the terrain curriculum',
-  },
-  {
-    slug: 'vla-cobot-magic',
-    title: 'Deploying test-time adaptable VLA policies on the AgileX Cobot Magic (split type)',
-    excerpt:
-      'A ROS1 bridge and policy router that runs openpi VLA policies on the AgileX Cobot Magic without finetuning, for single-arm manipulation on a table top.',
-    markdown: '/uploads/blogs/vla_cobot_magic/vla_cobot_magic.md',
-    image: '/uploads/blogs/vla_cobot_magic/thumbnail.webp',
-    publishedOn: 'Jun 2026',
-    publishedAt: '2026-06',
-    year: '2026',
-    themeId: 3,
-    figure: 'ROS1 topics bridged into openpi observations',
   },
   {
     slug: 'waypoint-navigation-m20',

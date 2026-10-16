@@ -1,3 +1,4 @@
+import folders from 'virtual:news-images';
 import type { ResourceLink } from '@/shared/ui';
 
 /**
@@ -64,21 +65,37 @@ export function newsDateLabel(item: NewsItem): string {
   return `${start.day}–${end.day} ${end.month} ${end.year}`;
 }
 
-const ITEMS: readonly NewsItem[] = [
+/** What an entry below says about its photos: either a folder under
+ *  `public/uploads/news/`, whose every photo is shown (add a file and it
+ *  appears), or a fixed list for photos that live elsewhere. */
+type NewsEntry = Omit<NewsItem, 'images'> &
+  ({ readonly folder: string; readonly images?: never } | { readonly folder?: never; readonly images: readonly NewsImage[] });
+
+function withImages({ folder, images, ...item }: NewsEntry): NewsItem {
+  if (images) return { ...item, images };
+  const found = folders[folder ?? ''] ?? [];
+  return {
+    ...item,
+    images: found.map((photo, i) => ({ ...photo, alt: `${item.title}, photo ${i + 1} of ${found.length}` })),
+  };
+}
+
+const ITEMS: readonly NewsEntry[] = [
+  {
+    slug: 'smu-zju-visit',
+    on: '2026-10-08',
+    title: 'SMU-ZJU visited NEAR Lab',
+    description:
+      'A group from the SMU-ZJU Doctor of Business Administration (Accounting and Finance) programme visited NEAR Lab on 8 October.',
+    folder: 'SMU_ZJU_visit',
+  },
   {
     slug: 'strike-vs-guard-cmu-nus',
     on: '2026-10-03',
     title: 'Strike vs Guard RCC project meeting with CMU AirLab and NUS MARMoT Lab',
     description:
       'Jiaying, Jeremy and William met Prof. Sebastian Scherer (CMU AirLab) and Prof. Guillaume Sartoretti (NUS MARMoT Lab) for the Strike vs Guard RCC project.',
-    images: [
-      {
-        src: '/uploads/news/iros26/strike_vs_guard.webp',
-        alt: 'Ten people in a row across a netted indoor drone arena, three of them holding small drones',
-        width: 2000,
-        height: 1500,
-      },
-    ],
+    folder: 'strike_vs_guard',
   },
   {
     slug: 'iros-2026-pittsburgh',
@@ -86,20 +103,7 @@ const ITEMS: readonly NewsItem[] = [
     until: '2026-10-01',
     title: 'Two workshop papers at IROS 2026, Pittsburgh',
     description: 'Jiaying, Jeremy and William presented two workshop papers at IROS 2026 in Pittsburgh.',
-    images: [
-      {
-        src: '/uploads/news/iros26/iros26.webp',
-        alt: 'Three NEAR Lab members behind the IROS 2026 Pittsburgh sign, with the river and a steel truss bridge through the windows behind them',
-        width: 1200,
-        height: 1600,
-      },
-      {
-        src: '/uploads/news/iros26/iros26_1.webp',
-        alt: 'Four people taking a selfie in the crowded IROS 2026 exhibition hall',
-        width: 1600,
-        height: 1200,
-      },
-    ],
+    folder: 'iros26',
   },
   {
     slug: 'singapore-airshow-2026',
@@ -167,7 +171,7 @@ const ITEMS: readonly NewsItem[] = [
 ];
 
 /** Newest first; ISO dates compare correctly as text. */
-export const NEWS: readonly NewsItem[] = [...ITEMS].sort((a, b) => b.on.localeCompare(a.on));
+export const NEWS: readonly NewsItem[] = ITEMS.map(withImages).sort((a, b) => b.on.localeCompare(a.on));
 
 export function newsBySlug(slug: string | undefined): NewsItem | undefined {
   return NEWS.find((item) => item.slug === slug);

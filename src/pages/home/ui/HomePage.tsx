@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PageSection, Reveal, SectionHeading } from '@/shared/ui';
+import { KEEP_SCROLL } from '@/shared/config';
 import { cx, useDocumentMeta } from '@/shared/lib';
 import { isActivityKind, type ActivityKind } from '../model/activity';
 import { NEWS } from '@/entities/news-item';
@@ -24,7 +25,12 @@ export function HomePage() {
 
   const handleKindChange = useCallback(
     (kind: ActivityKind) => {
-      navigate(kind === 'all' ? '/home/all' : `/home/${kind}`, { replace: true });
+      // Switching tabs rewrites the address in place; the reader is looking at
+      // the feed and should not be sent back to the top of the page.
+      navigate(kind === 'all' ? '/home/all' : `/home/${kind}`, {
+        replace: true,
+        state: KEEP_SCROLL,
+      });
     },
     [navigate],
   );

@@ -8,6 +8,7 @@ import { BlogsPage } from '@/pages/blogs';
 import { BlogPostPage } from '@/pages/blog-post';
 import { NewsPostPage } from '@/pages/news-post';
 import { PeoplePage } from '@/pages/people';
+import { TestimonialPage } from '@/pages/testimonial';
 import { JoinPage } from '@/pages/join';
 
 /** Hash routing preserves the `#papers`-style links the design shipped with. */
@@ -24,6 +25,7 @@ export const router = createHashRouter([
       { path: 'blogs/:slug', element: <BlogPostPage /> },
       { path: 'news/:slug', element: <NewsPostPage /> },
       { path: 'people', element: <PeoplePage /> },
+      { path: 'testimonials/:slug', element: <TestimonialPage /> },
       { path: 'contact', element: <JoinPage /> },
       // The page's address before it was renamed; links to it still land.
       { path: 'join', element: <Navigate to={ROUTES.contact} replace /> },

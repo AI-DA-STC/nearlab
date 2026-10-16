@@ -28,7 +28,7 @@
   gap: 0 48px;
 }
 
-.alumnusLink {
+.alumnus {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -38,8 +38,21 @@
   color: var(--nl-ink-heading);
 }
 
+.alumnusLinks {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.alumnusLink {
+  font-family: var(--nl-font-mono);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--nl-ink-faint);
+}
+
 .alumnusLink:hover {
-  color: var(--nl-navy);
+  color: var(--nl-link-hover);
 }
 
 .alumnusName {
