@@ -32,7 +32,7 @@ To plan, the robot and the goal are added to the global layer as vertices, joine
 
 When the robot gets closer and an obstacle comes into view, the edges through it are removed and the search runs again on a graph that has barely changed. A moving obstacle is handled the same way. The edges it blocks are disconnected, then reconnected once the line of sight returns. A route into a dead end costs travel time (the paper's physical run covers 388 m in 406 s and goes into four dead ends on the way), but the replan itself is cheap.
 
-![Three panels showing a robot attempting a straight route through unseen space, discovering a wall that deletes the edges crossing it, and replanning around the end of the wall](/Users/krishnaiyer/Workspace/nearlab/public/uploads/blogs/far_planner/images/attempt_fail_reroute.webp)
+![Three panels showing a robot attempting a straight route through unseen space, discovering a wall that deletes the edges crossing it, and replanning around the end of the wall](/uploads/blogs/far_planner/images/attempt_fail_reroute.webp)
 
 *Attempt, fail, reroute. The graph, the shortest paths and the deleted edges are computed for this toy layout. The layout itself is invented.*
 
