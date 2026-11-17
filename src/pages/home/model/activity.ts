@@ -131,9 +131,7 @@ const ENTRIES: readonly ActivityItem[] = [
     title: "Two Starlings fly CMU's figure-eight in Singapore",
     quote:
       "Two Starling 2 Max drones fly CMU AirLab's head-on figure-eight in NEAR Lab's Singapore flight lab at 2 m/s, with nobody on the sticks. The safety filter eases them apart at each meeting.",
-    resources: [
-      { label: 'Video', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/updates/st/2026-11-16-figure-eight-in-singapore/' },
-    ],
+    resources: [{ label: 'Strike vs Guard', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/partners/st/' }],
     image: '/uploads/media/st-fig8-two-starlings.webp',
     thumbnailAlt: 'Two Starlings in the Singapore flight lab, with the ground station view and a close-up of the meeting point',
   },

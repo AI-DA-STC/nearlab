@@ -120,12 +120,7 @@ const ITEMS: readonly NewsEntry[] = [
         height: 696,
       },
     ],
-    links: [
-      { label: 'Two Starlings', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/updates/st/2026-11-13-two-starlings-in-singapore/' },
-      { label: 'Flown by hand', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/updates/st/2026-11-13-hand-flown-drone-and-the-safety-filter/' },
-      { label: 'Figure-eight', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/updates/st/2026-11-16-figure-eight-in-singapore/' },
-      { label: 'Programme site', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/' },
-    ],
+    links: [{ label: 'Strike vs Guard', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/partners/st/' }],
   },
   {
     slug: 'smu-zju-visit',
@@ -142,10 +137,7 @@ const ITEMS: readonly NewsEntry[] = [
     description:
       'Jiaying, Jeremy and William met Prof. Sebastian Scherer (CMU AirLab) and Prof. Guillaume Sartoretti (NUS MARMoT Lab) for Strike vs Guard. Strike vs Guard is a research programme, funded by HTX and carried out by ST Engineering in collaboration with Carnegie Mellon University, the University of Pennsylvania, and the National University of Singapore, working toward decentralised multi-drone autonomy: teams of drones that coordinate, adapt, and make decisions on their own in changing environments, with no pilot and no central controller.',
     folder: 'strike_vs_guard',
-    links: [
-      { label: 'Flight days at CMU', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/updates/st/2026-10-02-cmu-flight-days/' },
-      { label: 'Programme site', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/' },
-    ],
+    links: [{ label: 'Strike vs Guard', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/partners/st/' }],
   },
   {
     slug: 'iros-2026-pittsburgh',
