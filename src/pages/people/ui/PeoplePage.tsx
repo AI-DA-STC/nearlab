@@ -2,7 +2,7 @@ import { PageSection, Reveal, RuledHeading, SectionBanner } from '@/shared/ui';
 import { Link } from 'react-router-dom';
 import { blogPostPath, testimonialPath } from '@/shared/config';
 import { useDocumentMeta } from '@/shared/lib';
-import { ALUMNI, LAB_LEAD, PEOPLE_GROUPS } from '../model/person';
+import { ALUMNI, LAB_DIRECTOR, PEOPLE_GROUPS } from '../model/person';
 import { PersonCard } from './PersonCard';
 import styles from './PeoplePage.module.css';
 
@@ -29,9 +29,9 @@ export function PeoplePage() {
 
       <PageSection tight>
         <Reveal className={styles.group}>
-          <RuledHeading>NEAR Lab lead</RuledHeading>
+          <RuledHeading>Director</RuledHeading>
           <ul className={styles.roster}>
-            <PersonCard person={LAB_LEAD} />
+            <PersonCard person={LAB_DIRECTOR} />
           </ul>
         </Reveal>
 

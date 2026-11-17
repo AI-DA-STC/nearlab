@@ -87,10 +87,24 @@ export const PAIRWISE_REGRET: Paper = {
   ],
 };
 
+export const WORTH_LOOKING_AGAIN: Paper = {
+  title: 'When Is It Worth Looking Again? Cost-Aware Active Information Gathering for ObjectNav',
+  venue: 'IROS 2026 Workshop (poster)',
+  year: '2026',
+  authors: 'Jiaying Chen, Chia Hwe Huang',
+  publishedOn: 'Sep 2026',
+  publishedAt: '2026-09',
+  themeId: 3,
+  image: '/uploads/papers/worth-looking-again-poster.webp',
+  figure: 'workshop poster: when a robot searching for an object should look again',
+  resources: [{ label: 'poster', href: '/uploads/papers/worth-looking-again-poster.webp' }],
+};
+
 /** Newest first, so a paper can be added anywhere in the list. ISO dates
  *  compare correctly as text. */
 export const PAPERS: readonly Paper[] = [
   RL2_VLA,
   SEMANTIC_PREDICTIVE_MAPPING,
   PAIRWISE_REGRET,
+  WORTH_LOOKING_AGAIN,
 ].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
