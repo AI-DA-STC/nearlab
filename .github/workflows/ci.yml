@@ -1,0 +1,34 @@
+# Checks every pull request, and every push to development, before it can go live.
+# A pass on development also triggers deploy.yml, which refreshes the test site
+# at https://nearlab.ai/preview/.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [development]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      # Same quality gate as the deploy: a type error or an FSD layer violation fails.
+      - run: npm run typecheck
+
+      - run: npm run lint:fsd
+
+      - run: npm run build
