@@ -82,6 +82,47 @@ function withImages({ folder, images, ...item }: NewsEntry): NewsItem {
 
 const ITEMS: readonly NewsEntry[] = [
   {
+    slug: 'two-starlings-singapore',
+    on: '2026-11-11',
+    until: '2026-11-16',
+    title: 'Two Starlings fly together in the Singapore flight lab',
+    description:
+      'Jeremy flew two Starling 2 Max drones together in NEAR Lab\'s Singapore flight lab for the first time, on the AirStack software the lab shares with CMU AirLab for Strike vs Guard. The safety filter held the drones 1.5 m apart, kept a drone flown by hand 1.76 m from a hovering one, and eased them apart at each meeting as they flew CMU\'s head-on figure-eight at 2 m/s with nobody on the sticks. One flight each so far; the clips are on the programme site.',
+    images: [
+      {
+        src: '/uploads/news/starlings_singapore/sg-two-starlings-hangar.webp',
+        alt: 'Two Starling 2 Max drones in the air just after take-off over the coloured floor tiles of the Singapore flight lab',
+        width: 800,
+        height: 600,
+      },
+      {
+        src: '/uploads/news/starlings_singapore/sg-hand-flown-approach.webp',
+        alt: 'Two Starling drones over the floor tiles, labelled "drone_1 hovering" and "drone_2 flown by hand"',
+        width: 1600,
+        height: 900,
+      },
+      {
+        src: '/uploads/news/starlings_singapore/sg-figure-eight-paths.webp',
+        alt: 'The flight lab from the lab\'s camera, with the two drones\' figure-eight paths drawn over it in blue and orange',
+        width: 1600,
+        height: 900,
+      },
+      {
+        src: '/uploads/news/starlings_singapore/sg-panel-spheres-meet.webp',
+        alt: 'Ground-station 3D view of two drones, each inside a translucent keep-out sphere, the two spheres touching',
+        width: 1260,
+        height: 640,
+      },
+      {
+        src: '/uploads/news/starlings_singapore/sg-ground-station-filter.webp',
+        alt: 'Ground-station view of two drones close together, their two rings blue and touching as the safety filter holds them apart',
+        width: 1304,
+        height: 696,
+      },
+    ],
+    links: [{ label: 'Strike vs Guard', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/partners/st/' }],
+  },
+  {
     slug: 'smu-zju-visit',
     on: '2026-10-08',
     title: 'SMU-ZJU visited NEAR Lab',
@@ -94,8 +135,9 @@ const ITEMS: readonly NewsEntry[] = [
     on: '2026-10-03',
     title: 'Strike vs Guard RCC project meeting with CMU AirLab and NUS MARMoT Lab',
     description:
-      'Jiaying, Jeremy and William met Prof. Sebastian Scherer (CMU AirLab) and Prof. Guillaume Sartoretti (NUS MARMoT Lab) for the Strike vs Guard RCC project.',
+      'Jiaying, Jeremy and William met Prof. Sebastian Scherer (CMU AirLab) and Prof. Guillaume Sartoretti (NUS MARMoT Lab) for Strike vs Guard. Strike vs Guard is a research programme, funded by HTX and carried out by ST Engineering in collaboration with Carnegie Mellon University, the University of Pennsylvania, and the National University of Singapore, working toward decentralised multi-drone autonomy: teams of drones that coordinate, adapt, and make decisions on their own in changing environments, with no pilot and no central controller.',
     folder: 'strike_vs_guard',
+    links: [{ label: 'Strike vs Guard', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/partners/st/' }],
   },
   {
     slug: 'iros-2026-pittsburgh',
@@ -147,7 +189,7 @@ const ITEMS: readonly NewsEntry[] = [
     on: '2025-09-04',
     title: 'Physical AI booth at ST Engineering InnoTech Conference 2025',
     description:
-      "William (NEAR Lab lead, second from right) presented MUMTOS and the lab's Physical AI work to Josephine Teo, Minister for Digital Development and Information (first from right), at ST Engineering's InnoTech Conference.",
+      "William (Director of NEAR Lab, second from right) presented MUMTOS and the lab's Physical AI work to Josephine Teo, Minister for Digital Development and Information (first from right), at ST Engineering's InnoTech Conference.",
     images: [
       {
         src: '/uploads/media/innotech.webp',

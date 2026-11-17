@@ -1,4 +1,4 @@
-import { PAIRWISE_REGRET, RL2_VLA, SEMANTIC_PREDICTIVE_MAPPING } from '@/entities/paper';
+import { PAIRWISE_REGRET, RL2_VLA, SEMANTIC_PREDICTIVE_MAPPING, WORTH_LOOKING_AGAIN } from '@/entities/paper';
 import { BLOGS } from '@/entities/blog';
 import { themeShortName } from '@/entities/theme';
 import { blogPostPath } from '@/shared/config';
@@ -113,13 +113,36 @@ const ENTRIES: readonly ActivityItem[] = [
       'The plans picked by F and F₂, explored side by side by four robots on an office floor plan',
   },
   {
+    kind: 'papers',
+    on: WORTH_LOOKING_AGAIN.publishedAt,
+    badge: 'PAPER',
+    source: WORTH_LOOKING_AGAIN.venue,
+    title: WORTH_LOOKING_AGAIN.title,
+    authors: WORTH_LOOKING_AGAIN.authors,
+    resources: WORTH_LOOKING_AGAIN.resources,
+    image: WORTH_LOOKING_AGAIN.image,
+    thumbnailAlt: 'The workshop poster for When Is It Worth Looking Again?',
+  },
+  {
+    kind: 'videos',
+    on: '2026-11-16',
+    badge: 'VIDEO',
+    source: 'Strike vs Guard',
+    title: "Two Starlings fly CMU's figure-eight in Singapore",
+    quote:
+      "Two Starling 2 Max drones fly CMU AirLab's head-on figure-eight in NEAR Lab's Singapore flight lab at 2 m/s, with nobody on the sticks. The safety filter eases them apart at each meeting.",
+    resources: [{ label: 'Strike vs Guard', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/partners/st/' }],
+    image: '/uploads/media/st-fig8-two-starlings.webp',
+    thumbnailAlt: 'Two Starlings in the Singapore flight lab, with the ground station view and a close-up of the meeting point',
+  },
+  {
     kind: 'media',
     on: '2025-09',
     badge: 'MEDIA',
     source: 'ST Engineering InnoTech',
     title: 'ST Engineering investing S$250m in five-year programme on physical AI research',
     quote:
-      "William (NEAR Lab lead, second from right) presenting MUMTOS and the lab's Physical AI work to Josephine Teo, Minister for Digital Development and Information (first from right), at ST Engineering's InnoTech Conference on 4 Sep.",
+      "William (Director of NEAR Lab, second from right) presenting MUMTOS and the lab's Physical AI work to Josephine Teo, Minister for Digital Development and Information (first from right), at ST Engineering's InnoTech Conference on 4 Sep.",
     resources: [
       { label: 'CNA', href: 'https://www.youtube.com/watch?v=u_x1grGOOJw' },
       {

@@ -11,6 +11,17 @@ npm run typecheck
 npm run lint:fsd   # Steiger, the official FSD linter
 ```
 
+## Preview site
+
+Two long-lived branches:
+
+- `main` publishes the live site, https://nearlab.ai/
+- `development` publishes a test copy, https://nearlab.ai/preview/ (hidden from search engines)
+
+Push changes to `development`, check them on `/preview/` about two minutes later, then open a pull
+request from `development` into `main` to put them live. Update `development` from `main` before
+starting, since `main` also takes direct commits. The workflows are in `.github/workflows/`.
+
 ## Organization
 
 

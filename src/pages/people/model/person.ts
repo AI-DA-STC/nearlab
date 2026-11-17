@@ -26,9 +26,9 @@ export interface PersonGroup {
   readonly people: readonly Person[];
 }
 
-export const LAB_LEAD: Person = {
+export const LAB_DIRECTOR: Person = {
   name: 'William Teo',
-  role: 'Lead',
+  role: 'Director and Founder',
   photo: '/uploads/people/william.jpeg',
   bio: 'Studies how teams of robots learn to coordinate: the strategies they form, the skills individual robots acquire, and the conditions under which that coordination holds or breaks. Also interested in world-action models and in how learned policies stay robust inside a team. PhD researcher at the MARMoT Lab (NUS), supervised by Guillaume Sartoretti. Before robotics, a chartered accountant and MIT supply-chain graduate.',
   topics: [],
