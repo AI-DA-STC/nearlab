@@ -1,8 +1,24 @@
+# Builds and publishes the website.
+#
+#   main         →  https://nearlab.ai/           (live site)
+#   development  →  https://nearlab.ai/preview/   (test site, not indexed by search engines)
+#
+# Every run builds BOTH branches and publishes them together, so the repository
+# only needs these two long-lived branches. It runs:
+#   - on a push to main, and
+#   - after the CI check passes on development. That run happens on main's side,
+#     because only main may publish to the github-pages environment.
+#
+# Requires: Settings → Pages → Build and deployment → Source = "GitHub Actions".
 name: Deploy site to GitHub Pages
 
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [development]
   workflow_dispatch:
 
 # Least-privilege token that can still publish to Pages.
@@ -18,29 +34,67 @@ concurrency:
 
 jobs:
   build:
+    # After CI on development, only publish if the check passed.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - name: Check out main (live site)
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          path: live
+
+      - name: Check out development (test site)
+        id: dev
+        uses: actions/checkout@v7
+        continue-on-error: true
+        with:
+          ref: development
+          path: preview
 
       - uses: actions/setup-node@v7
         with:
           node-version: '22'
-          cache: npm
-
-      - run: npm ci
 
       # Quality gate: a type error or an FSD layer violation stops the deploy.
-      - run: npm run typecheck
+      - name: Build live site from main
+        working-directory: live
+        run: |
+          npm ci
+          npm run typecheck
+          npm run lint:fsd
+          npm run build
 
-      - run: npm run lint:fsd
+      # A broken development branch never blocks the live site: its build is
+      # skipped and the live site still publishes.
+      - name: Build test site from development
+        id: preview
+        if: steps.dev.outcome == 'success'
+        continue-on-error: true
+        working-directory: preview
+        env:
+          BASE_PATH: /preview/
+        run: |
+          npm ci
+          npm run typecheck
+          npm run lint:fsd
+          npm run build
 
-      - run: npm run build
+      - name: Combine
+        run: |
+          mkdir -p _site
+          cp -r live/dist/. _site/
+          if [ "${{ steps.preview.outcome }}" = success ]; then
+            mkdir -p _site/preview
+            cp -r preview/dist/. _site/preview/
+            rm -f _site/preview/CNAME
+          fi
 
       - uses: actions/configure-pages@v6
 
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: dist
+          path: _site
 
   deploy:
     needs: build
