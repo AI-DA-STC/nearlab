@@ -125,6 +125,21 @@ const ENTRIES: readonly ActivityItem[] = [
   },
   {
     kind: 'videos',
+    on: '2026-11-18',
+    badge: 'VIDEO',
+    source: 'Strike vs Guard',
+    title: 'Teaching drones to work as a team',
+    quote:
+      'Why airports and stadiums need drone teams that work together, how the teams learn a strategy, and real flights at CMU and in our Singapore lab. Sound on. Video: NEAR Lab, ST Engineering, and CMU AirLab (CC BY-SA 4.0; re-encoded, trimmed, cropped and blurred). Stock footage: Pexels.',
+    resources: [
+      { label: 'Watch', href: '/uploads/media/strike-vs-guard-100s.mp4' },
+      { label: 'Strike vs Guard', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/partners/st/' },
+    ],
+    image: '/uploads/media/strike-vs-guard-100s.webp',
+    thumbnailAlt: 'The Strike vs Guard title over the Singapore lab, with the partner logos',
+  },
+  {
+    kind: 'videos',
     on: '2026-11-16',
     badge: 'VIDEO',
     source: 'Strike vs Guard',

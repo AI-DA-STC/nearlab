@@ -51,8 +51,101 @@
   margin-top: 18px;
 }
 
-.tabs {
+.mediaCell {
+  position: relative;
+}
+
+/* The full video, sized like the frame it replaces. */
+.player {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--nl-bg-deep);
+  border: 1px solid var(--nl-border);
+  border-radius: var(--nl-radius);
+}
+
+/* The whole picture is the play button; the disc marks it. */
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: transparent;
+}
+
+.playDisc {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  padding-left: 6px;
+  border-radius: 50%;
+  color: var(--nl-ink-inverse);
+  background: rgb(18 33 47 / 0.72);
+  border: 2px solid var(--nl-ink-inverse);
+  transition: transform var(--nl-dur-fast) ease-out, background var(--nl-dur-fast) ease-out;
+}
+
+.playOverlay:hover .playDisc,
+.playOverlay:focus-visible .playDisc {
+  transform: scale(1.08);
+  background: var(--nl-navy);
+}
+
+.watch {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: var(--nl-radius);
+  font-family: var(--nl-font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--nl-ink-inverse);
+  background: var(--nl-navy);
+  cursor: pointer;
+  transition: background var(--nl-dur-fast) ease-out;
+}
+
+.watch:hover,
+.watch:focus-visible {
+  background: var(--nl-navy-deep);
+}
+
+.controls {
   margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--nl-border-strong);
+  color: var(--nl-navy);
+  background: var(--nl-bg);
+  cursor: pointer;
+  transition: background var(--nl-dur-fast) ease-out, color var(--nl-dur-fast) ease-out;
+}
+
+.arrow:hover,
+.arrow:focus-visible {
+  background: var(--nl-navy);
+  color: var(--nl-ink-inverse);
+}
+
+.flip {
+  transform: scaleX(-1);
+}
+
+.tabs {
   display: flex;
   align-items: center;
   gap: 8px;
