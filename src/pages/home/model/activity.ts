@@ -128,7 +128,7 @@ const ENTRIES: readonly ActivityItem[] = [
     on: '2026-11-18',
     badge: 'VIDEO',
     source: 'Strike vs Guard',
-    title: 'Strike vs Guard in 100 seconds',
+    title: 'Teaching drones to work as a team',
     quote:
       'Why airports and stadiums need drone teams that work together, how the teams learn a strategy, and real flights at CMU and in our Singapore lab. Sound on. Video: NEAR Lab, ST Engineering, and CMU AirLab (CC BY-SA 4.0; re-encoded, trimmed, cropped and blurred). Stock footage: Pexels.',
     resources: [

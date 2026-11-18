@@ -15,6 +15,9 @@ export interface FeaturedItem {
   readonly poster?: string;
   readonly mediaCaption: string;
   readonly mediaAlt: string;
+  /** A full video with sound that plays in the slide, in place of the
+   *  silent `image` loop, when the visitor presses play. */
+  readonly play?: { readonly src: string; readonly label: string };
 }
 
 /** A paper as a slide. The paper supplies everything but the prose and the
@@ -40,11 +43,11 @@ export const FEATURED: readonly FeaturedItem[] = [
   {
     on: '2026-11-18',
     eyebrow: 'NOV 2026 · STRIKE VS GUARD',
-    title: 'Strike vs Guard in 100 seconds',
+    title: 'Teaching drones to work as a team',
     summary:
       'Why airports and stadiums need drone teams that work together, how the teams learn a strategy, and real flights at CMU and in our Singapore lab. A joint programme of ST Engineering, NUS, UPenn and CMU, funded by HTX.',
+    play: { src: '/uploads/media/strike-vs-guard-100s.mp4', label: 'Watch the video · 1:41' },
     resources: [
-      { label: 'watch with sound', href: '/uploads/media/strike-vs-guard-100s.mp4' },
       { label: 'Strike vs Guard', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/partners/st/' },
     ],
     image: '/uploads/media/strike-vs-guard-loop.mp4',
