@@ -22,6 +22,9 @@ Push changes to `development`, check them on `/preview/` about two minutes later
 request from `development` into `main` to put them live. Update `development` from `main` before
 starting, since `main` also takes direct commits. The workflows are in `.github/workflows/`.
 
+Claude Code sessions follow `CLAUDE.md`: they push only to `development` and leave the merge
+to a person on the GitHub web page (enforced by `scripts/claude/guard.mjs`).
+
 ## Organization
 
 
