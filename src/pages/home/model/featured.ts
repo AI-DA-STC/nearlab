@@ -37,6 +37,22 @@ function paperSlide(paper: Paper, summary: string, mediaAlt: string): FeaturedIt
 /** Newest first, so a slide can be added anywhere in the list. ISO dates
  *  compare correctly as text. */
 export const FEATURED: readonly FeaturedItem[] = [
+  {
+    on: '2026-11-18',
+    eyebrow: 'NOV 2026 · STRIKE VS GUARD',
+    title: 'Strike vs Guard in 100 seconds',
+    summary:
+      'Why airports and stadiums need drone teams that work together, how the teams learn a strategy, and real flights at CMU and in our Singapore lab. A joint programme of ST Engineering, NUS, UPenn and CMU, funded by HTX.',
+    resources: [
+      { label: 'watch with sound', href: '/uploads/media/strike-vs-guard-100s.mp4' },
+      { label: 'Strike vs Guard', href: 'https://strike-vs-guard.github.io/Strike-Versus-Guard/partners/st/' },
+    ],
+    image: '/uploads/media/strike-vs-guard-loop.mp4',
+    poster: '/uploads/media/strike-vs-guard-loop-poster.jpg',
+    mediaCaption: 'the opening of the video: two drones fly head-on figure-eights',
+    mediaAlt:
+      'Two Starling drones fly head-on figure-eights in the Singapore lab under the line "What if drones could work together, without a pilot for each one?", then the Strike vs Guard title with the partner logos',
+  },
   paperSlide(
     RL2_VLA,
     'Steering a vision-language-action model in its latent space, with reinforcement learning choosing how to compose the steering directions and test-time scaling deciding how far to push them.',
